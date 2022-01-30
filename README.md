@@ -1,4 +1,4 @@
-# Semester 7-2A-SN-ENSEEIHT
+# Semester 8-2A-SN-ENSEEIHT
 
 ### 考试占比
 |UE|科目|占比|考核形式|日期|
