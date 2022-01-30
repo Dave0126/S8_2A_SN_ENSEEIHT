@@ -1,22 +1,22 @@
 # Semester 7-2A-SN-ENSEEIHT
 
-### 考试时间表（暂定）
-|日期|科目|形式|
-|:----:|:----:|:----:|
-|02/25|OpenMP|BE|
-|03/18|Programmation mobile|Examen|
-|03/18|MiniProjet - Semantique et traduction des langages|Project|
-|04/08|MiniProjet - Semantique et traduction des langages|Project|
-|04/12|MiniProjet - Semantique et traduction des langages|Oral|
-|04/15|Systeme de transition|Examen|
-|04/22|Programmation Avencee et Calculabilite|Examen|
-|04/22|Apprentissage Profond|Examen|
-|05/12|Application Web|Examen|
-|05/20|Semantique et traduction des langages|Examen|
-|05/31|Programmation Declarative|BE|
-|06/01|Interpretation Abstraite|BE|
-|06/02|Projet - Application Web|Oral|
-|06/03|Basse de Donnees|Examen|
+### 考试占比
+|UE|科目|占比|考核形式|日期|
+|:----:|:----:|:----:|:----:|:----:|
+|UE - Applications concurrentes et communicantes, bases de données|OpenMP|15%|BE|03/03|
+|-|Application Web|35%|Examen|05/12|
+|-|Projet - Application Web|15%|Projet (Oral)|06/02|
+|-|Bases de Données|20%|Examen|06/03|
+|-|Projet - Données Réparties|15%|Projet|06/03|
+|UE - Méthodes Formelles|Systèmes de transitions|50%|Examen|04/15|
+|-|Vérification par Analyse statique|50%|BE|06/01|
+|UE - Paradigmes émergents de programmation|Programmation Déclarative|50%|BE|05/31|
+|-|Programmation Avancée & Calculabilité|50%|Examen|04/22|
+|UE - Sémantique et traduction des langages|Sémantique et traduction des langages|40%|Examen|05/20|
+|-|MiniProjet - Sémantique et traduction des langages|20%|Projet|03/18|
+|-|Projet - Sémantique et traduction des langages|40%|Projet|
+|UE Programmation Mobile et apprentissage profond|Programmation mobile|50%|Examen|03/18|
+|-|Apprentissage profond|50%|Projet / Examen|04/22|
 
 ### INTRODUCTION
 这个仓库里的内容均为*Département Sciences du Numérique - E.N.S.E.E.I.H.T.* 2021~2022学年-第2学期的教学资料，其中包括所有科目的**Cours**、**TD**、**TP**、**Projet**以及**Examen**的Sujet、Slide、Source Code以及我个人的Rapport和部分笔记。希望能对你有所帮助。
