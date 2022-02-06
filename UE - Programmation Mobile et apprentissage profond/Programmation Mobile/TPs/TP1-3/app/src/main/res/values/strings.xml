@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Web Browser</string>
+    <string name="defaultURL">http://www.enseeiht.fr</string>
+    <string name="buttonName">GO!</string>
+</resources>
