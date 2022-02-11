@@ -54,27 +54,13 @@
         app:layout_constraintStart_toEndOf="@+id/URITextView"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <VideoView
-        android:id="@+id/videoView"
-        android:layout_width="409dp"
-        android:layout_height="262dp"
-        android:layout_marginStart="1dp"
-        android:layout_marginTop="19dp"
-        android:layout_marginEnd="1dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnRestart" />
-
     <Button
         android:id="@+id/btnRestart"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="18dp"
-        android:layout_marginBottom="19dp"
         android:text="@string/btnRestart"
-        app:layout_constraintBottom_toTopOf="@+id/videoView"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnSelect" />
 
@@ -85,11 +71,21 @@
         android:layout_marginStart="47dp"
         android:layout_marginTop="18dp"
         android:layout_marginEnd="15dp"
-        android:layout_marginBottom="19dp"
         android:text="@string/btnPause"
-        app:layout_constraintBottom_toTopOf="@+id/videoView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/btnRestart"
         app:layout_constraintTop_toBottomOf="@+id/btnPlay" />
+
+    <SurfaceView
+        android:id="@+id/surfaceView"
+        android:layout_width="412dp"
+        android:layout_height="281dp"
+        android:layout_marginTop="103dp"
+        android:layout_marginBottom="164dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnRestart" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
