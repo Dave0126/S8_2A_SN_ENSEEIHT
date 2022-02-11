@@ -2,5 +2,9 @@
     <string name="app_name">PlayerActivity</string>
     <string name="btnSelect">Select from Gallery</string>
     <string name="btnPlay">Intent play</string>
-    <string name="URIPath">URI:</string>
+    <string name="btnRestart">Play from start</string>
+    <string name="btnPause">Pause / Resume</string>
+    <string name="URIPath">URI info.</string>
+    <string name="URILable">URI:</string>
+
 </resources>
