@@ -16,7 +16,7 @@ type errorType =
 (* Définition du type des valeurs renvoyées par l'interprète *)
 (* ======================================================== *)
 type valueType =
-  | FrozenValue of (ast * environment)        (* Fermeture fonctionnelle *)
+  | FrozenValue of (ast * environment)        (* Fermeture fonctionnelle *) 
   | IntegerValue of int                       (* Valeur entière *)
   | BooleanValue of bool                      (* Valeur booléenne *)
   | ErrorValue of errorType                   (* Valeur représentant une erreur *)
@@ -37,7 +37,7 @@ let rec string_of_env env =
   match env with
   | [] -> ""
   | (key,value)::q -> (key ^ "," ^ (string_of_value value)) ^ ";" ^ (string_of_env q)
-                    
+
 (* ======================================================== *)
 (* string_of_value : valueType -> string *)
 (* Convertit une valueType en une chaine de caractères en vue de son affichage *)
@@ -48,7 +48,7 @@ and string_of_value value =
   | (IntegerValue value) -> (string_of_int value)
   | (BooleanValue value) -> (if (value) then "true" else "false")
   | (ErrorValue error) -> (string_of_error error)
-                        
+
 (* ======================================================== *)
 (* string_of_error : errorType -> string *)
 (* Convertit une erreur en une chaine de caractères en vue de son affichage *)
@@ -62,9 +62,9 @@ and string_of_error error =
 
 (* ======================================================== *)
 (* Type du résultat d'une recherche *)
-(* ======================================================== *)                              
-type 'a searchResult = 
-  | NotFound 
+(* ======================================================== *)
+type 'a searchResult =
+  | NotFound
   | Found of 'a
 
 (* ======================================================== *)
@@ -77,17 +77,17 @@ let rec lookfor name env =
   | [] -> NotFound
   | (key,value) :: others ->
     (if (key = name) then (Found value) else (lookfor name others))
-  
+
 (* ========================================================*)
 (* value_of_expr : ast -> environment -> valueType *)
 (* Fonction d'évaluation des expressions *)
 let rec value_of_expr expr env =
-  if ( ! debug ) then 
-    (print_endline ((string_of_ast expr) ^ " -> " ^ (string_of_env env))); 
+  if ( ! debug ) then
+    (print_endline ((string_of_ast expr) ^ " -> " ^ (string_of_env env)));
   match expr with
   (* Partie Expression *)
-  | (TrueNode) ->  ruleTrue 
-  | (FalseNode) ->  ruleFalse 
+  | (TrueNode) ->  ruleTrue
+  | (FalseNode) ->  ruleFalse
   | (IntegerNode value) -> ruleInteger value
   | (AccessNode name) -> ruleAccess env name
   | (UnaryNode (op,expr)) -> ruleUnary env op expr
@@ -95,9 +95,9 @@ let rec value_of_expr expr env =
   (* Partie Fonctionnelle *)
   | (LetNode (ident,bvalue,bin)) -> ruleLet env ident bvalue bin
   | (IfthenelseNode (cond,bthen,belse)) -> ruleIf env cond bthen belse
-  | (FunctionNode (_,_)) -> ruleFunction expr env
+  | (FunctionNode (_,_)) -> ruleFunction env expr
   | (CallNode (fexpr,pexpr)) -> ruleCallByValue env fexpr pexpr
-  (*| (CallNode (fexpr,pexpr)) -> ruleCallByName env fexpr pexpr *) 
+  (*| (CallNode (fexpr,pexpr)) -> ruleCallByName env fexpr pexpr *)
   | (LetrecNode (ident,bvalue,bin)) -> ruleLetrec env ident bvalue bin
   (* Partie Impérative : à compléter *)
   | _ -> ErrorValue UndefinedExpressionError (* les expressions avec effets de bord *)
@@ -107,7 +107,7 @@ let rec value_of_expr expr env =
     (* ruleTrue : valueType *)
     (* Fonction d'évaluation de true *)
     ruleTrue = (BooleanValue true)
-             
+
   (* ========================================================*)
   and
     (* ruleFalse : valueType *)
@@ -115,28 +115,28 @@ let rec value_of_expr expr env =
     ruleFalse = (BooleanValue false)
 
   (* ========================================================*)
-  and 
+  and
     (* ruleInteger : int -> valueType *)
     (* Fonction d'évaluation d'un entier *)
     ruleInteger value = (IntegerValue value)
 
   (* ========================================================*)
-  and 
+  and
     (* ruleName : environment -> string -> valueType *)
     (* Fonction d'évaluation d'un identificateur *)
-    ruleAccess env name = 
+    ruleAccess env name =
     match (lookfor name env) with
     | NotFound -> (ErrorValue (UnknownIdentError name))
     (* A compléter lors de l'ajout de la fermeture pour les définitions récursives *)
     | (Found value) -> value
-    
+
   (* ========================================================*)
-  and 
+  and
     (* ruleUnary : environment -> unary -> ast- > valueType *)
     (* Fonction d'évaluation d'un opérateur unaire *)
     ruleUnary env op exp =
-    let value =  
-      (value_of_expr exp env) 
+    let value =
+      (value_of_expr exp env)
     in
     match value with
     | (ErrorValue _) as result -> result (* Propagation des erreurs *)
@@ -150,19 +150,19 @@ let rec value_of_expr expr env =
         | Negation -> (ErrorValue TypeMismatchError)
         | Opposite -> (IntegerValue (- value)))
     | _ -> (ErrorValue TypeMismatchError)
-                              
+
   (* ========================================================*)
-  and 
+  and
     (* ruleBinary : environment -> binary -> ast- > ast -> valueType *)
     (* Fonction d'évaluation d'un opérateur binaire *)
-    ruleBinary env op left right = 
-    let leftvalue = 
+    ruleBinary env op left right =
+    let leftvalue =
       (value_of_expr left env) (* Evaluation du paramètre gauche *)
     in
     (match leftvalue with
      | (ErrorValue _) as result -> result (* Propagation de l'erreur *)
      | _ ->
-        (let rightvalue = 
+        (let rightvalue =
            (value_of_expr right env) (* Evaluation du paramètre droit *)
          in
          (match rightvalue with
@@ -170,7 +170,7 @@ let rec value_of_expr expr env =
           | _ ->
              (match (leftvalue,rightvalue) with
               (* Vérification des types *)
-              | ((IntegerValue leftvalue), (IntegerValue rightvalue)) -> 
+              | ((IntegerValue leftvalue), (IntegerValue rightvalue)) ->
                  (match op with
                   | Equal -> (BooleanValue (leftvalue = rightvalue))
                   | Different -> (BooleanValue (leftvalue <> rightvalue))
@@ -181,72 +181,94 @@ let rec value_of_expr expr env =
                   | Add -> (IntegerValue (leftvalue + rightvalue))
                   | Substract -> (IntegerValue (leftvalue - rightvalue))
                   | Multiply -> (IntegerValue (leftvalue * rightvalue))
-                  | Divide -> 
-                     (if (rightvalue = 0) then 
+                  | Divide ->
+                     (if (rightvalue = 0) then
                         (ErrorValue RuntimeError) (* Division par zéro *)
-                      else 
+                      else
                         (IntegerValue (leftvalue / rightvalue)))
                   | _ -> (ErrorValue TypeMismatchError))
               (* Vérification des types *)
-              | ((BooleanValue leftvalue), (BooleanValue rightvalue)) -> 
+              | ((BooleanValue leftvalue), (BooleanValue rightvalue)) ->
                  (match op with
                   | Or -> (BooleanValue (leftvalue || rightvalue))
                   | And -> (BooleanValue (leftvalue && rightvalue))
                   | _ -> (ErrorValue TypeMismatchError))
               | _ -> (ErrorValue TypeMismatchError)))))
-    
+
   (* ========================================================*)
-  and 
+  and
     (* ruleLet : environment -> string -> ast- > ast -> valueType *)
     (* Fonction d'évaluation d'un let *)
     (* "let ident = bvalue in bin" *)
-    ruleLet env ident bvalue bin = 
-    (* A compléter *)
-    (ErrorValue UndefinedExpressionError)
-         
+    ruleLet _env _ident _bvalue _bin =
+    let valLet1 = (value_of_expr  _bvalue _env) in
+      match valLet1 with
+      | (ErrorValue _) as result -> result
+      | _ -> let valLet2 = (value_of_expr _bin ((_ident, valLet1)::_env)) in
+        match valLet2 with
+        | (ErrorValue _) as result -> result
+        | _ -> (FrozenValue(_bin, (_ident, valLet1)::_env))
+
   (* ========================================================*)
   and
     (* ruleIf : environment -> ast -> ast -> ast- > valueType *)
     (* Fonction d'évaluation d'une conditionnelle *)
     (* "if cond then bthen else belse" *)
-    ruleIf env cond bthen belse = 
-    (* A compléter *)
-    (ErrorValue UndefinedExpressionError)
-    
+    ruleIf _env _cond _bthen _belse =
+    let valCondition = (value_of_expr _cond _env) in 
+      match valCondition with
+      | (ErrorValue _) as result -> result
+      | (BooleanValue resultCondition) -> 
+        (if (resultCondition) then
+          (value_of_expr _bthen _env)
+        else
+          (value_of_expr _belse _env)
+        )
+      | _ -> (ErrorValue TypeMismatchError)
+
   (* ========================================================*)
-  and 
+  and
     (* ruleFunction : ast -> environment -> valueType *)
     (* Fonction d'évaluation d'une fonction *)
-    ruleFunction expr env = 
-    (* A compléter *)
-    (ErrorValue UndefinedExpressionError)
+    ruleFunction _env _expr = 
+    (FrozenValue (_expr, _env))
 
   (* Appel par nom *)
   (* ========================================================*)
   and
     (* ruleCallByName : environment -> ast -> ast -> valueType *)
     (* Fonction d'évaluation d'un appel de fonction avec passage de paramètre par nom*)
-    ruleCallByName env fexpr pexpr = 
-    (* A compléter *)
-    (ErrorValue UndefinedExpressionError)
-    
+    ruleCallByName _env _fexpr _pexpr =
+    match (value_of_expr _fexpr _env) with
+    | (ErrorValue _) as result -> result
+    | (FrozenValue (fexpr,fenv)) -> 
+        (match fexpr with
+        | (FunctionNode (paraFunction,bodyFunction)) -> 
+              (value_of_expr bodyFunction ((paraFunction,(FrozenValue (_pexpr,_env)))::fenv))
+        | _ -> (ErrorValue TypeMismatchError))
+    | _ -> (ErrorValue TypeMismatchError)
+
   (* ========================================================*)
   and
     (* ruleCallByValue : environment -> ast -> ast -> valueType *)
     (* Fonction d'évaluation d'un appel de fonction avec passage de paramètre par valeur*)
-    ruleCallByValue env fexpr pexpr = 
+    ruleCallByValue _env _fexpr _pexpr =
     (* Appel par valeur *)
-    (* A compléter *)
-    (ErrorValue UndefinedExpressionError)
-    
+    match (value_of_expr _pexpr _env) with
+    | (ErrorValue _) as result -> result
+    | _ -> let valFunction = (value_of_expr _fexpr _env) in 
+      match valFunction with
+      | (FrozenValue ((FunctionNode(paraFunction, bodyFunction)), envFunction)) -> 
+              (value_of_expr bodyFunction ((paraFunction, (value_of_expr _pexpr _env))::envFunction))
+      | (ErrorValue _) as result -> result
+      | _ -> (ErrorValue TypeMismatchError)
+
   (* ========================================================*)
   and
     (* ruleLetrec : environment -> string -> ast- > ast -> valueType *)
     (* Fonction d'évaluation d'un let rec*)
     (* "letrec ident = bvalue in bin" *)
-    ruleLetrec env ident bvalue bin = 
-    (* A compléter *)
-    (ErrorValue UndefinedExpressionError)
-    
-
+    ruleLetrec _env _ident _bvalue _bin = 
+    let envLetRec = ((_ident,(FrozenValue ((LetrecNode (_ident,_bvalue,_bvalue)),_env)))::_env) in
+    (value_of_expr _bin envLetRec)
 

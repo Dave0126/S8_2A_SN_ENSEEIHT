@@ -1,0 +1,13 @@
+(ocamllex lexer)
+
+(menhir
+ (modules parser))
+
+;; (executable
+ ;; (name Main))
+
+(library
+(name tests)
+(inline_tests)
+(preprocess
+ (pps ppx_inline_test))) 

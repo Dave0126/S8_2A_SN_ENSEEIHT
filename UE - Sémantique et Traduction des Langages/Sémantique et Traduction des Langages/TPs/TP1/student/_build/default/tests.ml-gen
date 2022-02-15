@@ -1,0 +1,26 @@
+(** @canonical Tests.Ast *)
+module Ast = Tests__Ast
+
+
+(** @canonical Tests.Lexer *)
+module Lexer = Tests__Lexer
+
+
+(** @canonical Tests.Main *)
+module Main = Tests__Main
+
+
+(** @canonical Tests.MiniML *)
+module MiniML = Tests__MiniML
+
+
+(** @canonical Tests.Parser *)
+module Parser = Tests__Parser
+
+
+(** @canonical Tests.Semantics *)
+module Semantics = Tests__Semantics
+
+
+(** @canonical Tests.Test *)
+module Test = Tests__Test
