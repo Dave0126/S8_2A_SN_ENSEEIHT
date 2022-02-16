@@ -1,0 +1,672 @@
+@!@!@STARTMSG 2262:0 @!@!@
+TLC2 Version 2.16 of 31 December 2020 (rev: cdddf55)
+@!@!@ENDMSG 2262 @!@!@
+@!@!@STARTMSG 2187:0 @!@!@
+Running breadth-first search Model-Checking with fp 63 and seed -4034808877544576357 with 2 workers on 4 cores with 1182MB heap and 2657MB offheap memory [pid: 960612] (Linux 5.4.0-89-generic amd64, AdoptOpenJDK 14.0.1 x86_64, OffHeapDiskFPSet, DiskStateQueue).
+@!@!@ENDMSG 2187 @!@!@
+@!@!@STARTMSG 2220:0 @!@!@
+Starting SANY...
+@!@!@ENDMSG 2220 @!@!@
+Parsing file /home/gdai/1_S8/S8_2A_SN_ENSEEIHT/UE - Méthodes formelles/Systèmes de transitions/TPs/TLA-TP1/missionnaires_et_cannibales.toolbox/Model_2/MC.tla
+Parsing file /home/gdai/1_S8/S8_2A_SN_ENSEEIHT/UE - Méthodes formelles/Systèmes de transitions/TPs/TLA-TP1/missionnaires_et_cannibales.toolbox/Model_2/missionnaires_et_cannibales.tla
+Parsing file /mnt/n7fs/tla/toolbox-1.7.1/plugins/org.lamport.tlatools_1.0.0.202012311918/tla2sany/StandardModules/TLC.tla
+Parsing file /mnt/n7fs/tla/toolbox-1.7.1/plugins/org.lamport.tlatools_1.0.0.202012311918/tla2sany/StandardModules/Naturals.tla
+Parsing file /mnt/n7fs/tla/toolbox-1.7.1/plugins/org.lamport.tlatools_1.0.0.202012311918/tla2sany/StandardModules/Sequences.tla
+Parsing file /mnt/n7fs/tla/toolbox-1.7.1/plugins/org.lamport.tlatools_1.0.0.202012311918/tla2sany/StandardModules/FiniteSets.tla
+Semantic processing of module Naturals
+Semantic processing of module missionnaires_et_cannibales
+Semantic processing of module Sequences
+Semantic processing of module FiniteSets
+Semantic processing of module TLC
+Semantic processing of module MC
+@!@!@STARTMSG 2219:0 @!@!@
+SANY finished.
+@!@!@ENDMSG 2219 @!@!@
+@!@!@STARTMSG 2185:0 @!@!@
+Starting... (2022-02-16 17:14:24)
+@!@!@ENDMSG 2185 @!@!@
+@!@!@STARTMSG 2189:0 @!@!@
+Computing initial states...
+@!@!@ENDMSG 2189 @!@!@
+@!@!@STARTMSG 2190:0 @!@!@
+Finished computing initial states: 1 distinct state generated at 2022-02-16 17:14:24.
+@!@!@ENDMSG 2190 @!@!@
+@!@!@STARTMSG 2193:0 @!@!@
+Model checking completed. No error has been found.
+  Estimates of the probability that TLC did not check all reachable states
+  because two distinct states had the same fingerprint:
+  calculated (optimistic):  val = 1.6E-17
+@!@!@ENDMSG 2193 @!@!@
+@!@!@STARTMSG 2201:0 @!@!@
+The coverage statistics at 2022-02-16 17:14:24
+@!@!@ENDMSG 2201 @!@!@
+@!@!@STARTMSG 2773:0 @!@!@
+<Init line 39, col 1 to line 39, col 4 of module missionnaires_et_cannibales>: 1:1
+@!@!@ENDMSG 2773 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 40, col 5 to line 44, col 20 of module missionnaires_et_cannibales: 1
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2772:0 @!@!@
+<C_C_toRight line 46, col 1 to line 46, col 11 of module missionnaires_et_cannibales>: 4:4
+@!@!@ENDMSG 2772 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 47, col 8 to line 47, col 16 of module missionnaires_et_cannibales: 4
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 47, col 8 to line 47, col 12 of module missionnaires_et_cannibales: 16
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 48, col 8 to line 48, col 25 of module missionnaires_et_cannibales: 4
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 48, col 17 to line 48, col 25 of module missionnaires_et_cannibales: 8
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 49, col 8 to line 49, col 27 of module missionnaires_et_cannibales: 4
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 49, col 18 to line 49, col 27 of module missionnaires_et_cannibales: 8
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 50, col 8 to line 50, col 34 of module missionnaires_et_cannibales: 4
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 51, col 8 to line 51, col 20 of module missionnaires_et_cannibales: 12
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 51, col 8 to line 51, col 11 of module missionnaires_et_cannibales: 8
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 52, col 8 to line 52, col 22 of module missionnaires_et_cannibales: 4
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 53, col 8 to line 53, col 15 of module missionnaires_et_cannibales: 5
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 53, col 8 to line 53, col 14 of module missionnaires_et_cannibales: 5
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  ||line 29, col 5 to line 30, col 41 of module missionnaires_et_cannibales: 5
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |||line 29, col 9 to line 29, col 37 of module missionnaires_et_cannibales: 5
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  ||||line 29, col 10 to line 29, col 23 of module missionnaires_et_cannibales: 5
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  ||||line 29, col 29 to line 29, col 37 of module missionnaires_et_cannibales: 1
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |||line 30, col 9 to line 30, col 40 of module missionnaires_et_cannibales: 5
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  ||||line 30, col 10 to line 30, col 25 of module missionnaires_et_cannibales: 5
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  ||||line 30, col 31 to line 30, col 40 of module missionnaires_et_cannibales: 3
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2772:0 @!@!@
+<C_toRight line 55, col 1 to line 55, col 9 of module missionnaires_et_cannibales>: 1:6
+@!@!@ENDMSG 2772 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 56, col 8 to line 56, col 16 of module missionnaires_et_cannibales: 6
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 56, col 8 to line 56, col 12 of module missionnaires_et_cannibales: 16
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 57, col 8 to line 57, col 25 of module missionnaires_et_cannibales: 6
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 57, col 17 to line 57, col 25 of module missionnaires_et_cannibales: 14
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 58, col 8 to line 58, col 27 of module missionnaires_et_cannibales: 6
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 58, col 18 to line 58, col 27 of module missionnaires_et_cannibales: 14
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 59, col 8 to line 59, col 34 of module missionnaires_et_cannibales: 6
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 60, col 8 to line 60, col 20 of module missionnaires_et_cannibales: 20
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 60, col 8 to line 60, col 11 of module missionnaires_et_cannibales: 14
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 61, col 8 to line 61, col 22 of module missionnaires_et_cannibales: 6
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 62, col 8 to line 62, col 15 of module missionnaires_et_cannibales: 8
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 62, col 8 to line 62, col 14 of module missionnaires_et_cannibales: 8
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  ||line 29, col 5 to line 30, col 41 of module missionnaires_et_cannibales: 8
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |||line 29, col 9 to line 29, col 37 of module missionnaires_et_cannibales: 8
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  ||||line 29, col 10 to line 29, col 23 of module missionnaires_et_cannibales: 8
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  ||||line 29, col 29 to line 29, col 37 of module missionnaires_et_cannibales: 2
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |||line 30, col 9 to line 30, col 40 of module missionnaires_et_cannibales: 8
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  ||||line 30, col 10 to line 30, col 25 of module missionnaires_et_cannibales: 8
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  ||||line 30, col 31 to line 30, col 40 of module missionnaires_et_cannibales: 5
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2772:0 @!@!@
+<C_M_toRight line 64, col 1 to line 64, col 11 of module missionnaires_et_cannibales>: 1:3
+@!@!@ENDMSG 2772 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 65, col 8 to line 65, col 16 of module missionnaires_et_cannibales: 3
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 65, col 8 to line 65, col 12 of module missionnaires_et_cannibales: 16
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 66, col 8 to line 66, col 16 of module missionnaires_et_cannibales: 3
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 66, col 8 to line 66, col 12 of module missionnaires_et_cannibales: 14
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 67, col 8 to line 67, col 25 of module missionnaires_et_cannibales: 3
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 67, col 17 to line 67, col 25 of module missionnaires_et_cannibales: 9
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 68, col 8 to line 68, col 27 of module missionnaires_et_cannibales: 3
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 68, col 18 to line 68, col 27 of module missionnaires_et_cannibales: 9
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 69, col 8 to line 69, col 25 of module missionnaires_et_cannibales: 3
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 69, col 17 to line 69, col 25 of module missionnaires_et_cannibales: 9
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 70, col 8 to line 70, col 27 of module missionnaires_et_cannibales: 3
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 70, col 18 to line 70, col 27 of module missionnaires_et_cannibales: 9
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 71, col 8 to line 71, col 20 of module missionnaires_et_cannibales: 12
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 71, col 8 to line 71, col 11 of module missionnaires_et_cannibales: 9
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 72, col 8 to line 72, col 22 of module missionnaires_et_cannibales: 3
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 73, col 8 to line 73, col 15 of module missionnaires_et_cannibales: 5
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 73, col 8 to line 73, col 14 of module missionnaires_et_cannibales: 5
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  ||line 29, col 5 to line 30, col 41 of module missionnaires_et_cannibales: 5
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |||line 29, col 9 to line 29, col 37 of module missionnaires_et_cannibales: 5
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |||line 30, col 9 to line 30, col 40 of module missionnaires_et_cannibales: 5
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  ||||line 30, col 10 to line 30, col 25 of module missionnaires_et_cannibales: 5
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  ||||line 30, col 31 to line 30, col 40 of module missionnaires_et_cannibales: 2
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2772:0 @!@!@
+<M_M_toRight line 75, col 1 to line 75, col 11 of module missionnaires_et_cannibales>: 2:2
+@!@!@ENDMSG 2772 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 76, col 8 to line 76, col 16 of module missionnaires_et_cannibales: 2
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 76, col 8 to line 76, col 12 of module missionnaires_et_cannibales: 16
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 77, col 8 to line 77, col 25 of module missionnaires_et_cannibales: 2
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 77, col 17 to line 77, col 25 of module missionnaires_et_cannibales: 8
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 78, col 8 to line 78, col 27 of module missionnaires_et_cannibales: 2
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 78, col 18 to line 78, col 27 of module missionnaires_et_cannibales: 8
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 79, col 8 to line 79, col 34 of module missionnaires_et_cannibales: 2
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 80, col 8 to line 80, col 20 of module missionnaires_et_cannibales: 10
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 80, col 8 to line 80, col 11 of module missionnaires_et_cannibales: 8
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 81, col 8 to line 81, col 22 of module missionnaires_et_cannibales: 2
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 82, col 8 to line 82, col 15 of module missionnaires_et_cannibales: 4
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 82, col 8 to line 82, col 14 of module missionnaires_et_cannibales: 4
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  ||line 29, col 5 to line 30, col 41 of module missionnaires_et_cannibales: 4
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |||line 29, col 9 to line 29, col 37 of module missionnaires_et_cannibales: 4
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  ||||line 29, col 10 to line 29, col 23 of module missionnaires_et_cannibales: 4
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  ||||line 29, col 29 to line 29, col 37 of module missionnaires_et_cannibales: 3
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |||line 30, col 9 to line 30, col 40 of module missionnaires_et_cannibales: 2
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2772:0 @!@!@
+<M_toRight line 84, col 1 to line 84, col 9 of module missionnaires_et_cannibales>: 0:2
+@!@!@ENDMSG 2772 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 85, col 8 to line 85, col 16 of module missionnaires_et_cannibales: 2
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 85, col 8 to line 85, col 12 of module missionnaires_et_cannibales: 16
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 86, col 8 to line 86, col 25 of module missionnaires_et_cannibales: 2
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 86, col 17 to line 86, col 25 of module missionnaires_et_cannibales: 10
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 87, col 8 to line 87, col 27 of module missionnaires_et_cannibales: 2
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 87, col 18 to line 87, col 27 of module missionnaires_et_cannibales: 10
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 88, col 8 to line 88, col 34 of module missionnaires_et_cannibales: 2
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 89, col 8 to line 89, col 20 of module missionnaires_et_cannibales: 12
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 89, col 8 to line 89, col 11 of module missionnaires_et_cannibales: 10
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 90, col 8 to line 90, col 22 of module missionnaires_et_cannibales: 2
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 91, col 8 to line 91, col 15 of module missionnaires_et_cannibales: 5
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 91, col 8 to line 91, col 14 of module missionnaires_et_cannibales: 5
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  ||line 29, col 5 to line 30, col 41 of module missionnaires_et_cannibales: 5
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |||line 29, col 9 to line 29, col 37 of module missionnaires_et_cannibales: 5
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  ||||line 29, col 10 to line 29, col 23 of module missionnaires_et_cannibales: 5
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  ||||line 29, col 29 to line 29, col 37 of module missionnaires_et_cannibales: 3
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |||line 30, col 9 to line 30, col 40 of module missionnaires_et_cannibales: 3
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  ||||line 30, col 10 to line 30, col 25 of module missionnaires_et_cannibales: 3
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  ||||line 30, col 31 to line 30, col 40 of module missionnaires_et_cannibales: 1
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2772:0 @!@!@
+<C_C_toLeft line 93, col 1 to line 93, col 10 of module missionnaires_et_cannibales>: 0:4
+@!@!@ENDMSG 2772 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 94, col 8 to line 94, col 17 of module missionnaires_et_cannibales: 4
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 94, col 8 to line 94, col 13 of module missionnaires_et_cannibales: 16
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 95, col 8 to line 95, col 25 of module missionnaires_et_cannibales: 4
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 95, col 17 to line 95, col 25 of module missionnaires_et_cannibales: 8
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 96, col 8 to line 96, col 27 of module missionnaires_et_cannibales: 4
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 96, col 18 to line 96, col 27 of module missionnaires_et_cannibales: 8
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 97, col 8 to line 97, col 34 of module missionnaires_et_cannibales: 4
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 98, col 8 to line 98, col 21 of module missionnaires_et_cannibales: 12
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 98, col 8 to line 98, col 11 of module missionnaires_et_cannibales: 8
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 99, col 8 to line 99, col 21 of module missionnaires_et_cannibales: 4
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 100, col 8 to line 100, col 15 of module missionnaires_et_cannibales: 5
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 100, col 8 to line 100, col 14 of module missionnaires_et_cannibales: 5
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  ||line 29, col 5 to line 30, col 41 of module missionnaires_et_cannibales: 5
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |||line 29, col 9 to line 29, col 37 of module missionnaires_et_cannibales: 5
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  ||||line 29, col 10 to line 29, col 23 of module missionnaires_et_cannibales: 5
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  ||||line 29, col 29 to line 29, col 37 of module missionnaires_et_cannibales: 3
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |||line 30, col 9 to line 30, col 40 of module missionnaires_et_cannibales: 4
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  ||||line 30, col 10 to line 30, col 25 of module missionnaires_et_cannibales: 4
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  ||||line 30, col 31 to line 30, col 40 of module missionnaires_et_cannibales: 1
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2772:0 @!@!@
+<M_M_toLeft line 102, col 1 to line 102, col 10 of module missionnaires_et_cannibales>: 0:2
+@!@!@ENDMSG 2772 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 103, col 8 to line 103, col 17 of module missionnaires_et_cannibales: 2
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 103, col 8 to line 103, col 13 of module missionnaires_et_cannibales: 16
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 104, col 8 to line 104, col 25 of module missionnaires_et_cannibales: 2
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 104, col 17 to line 104, col 25 of module missionnaires_et_cannibales: 8
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 105, col 8 to line 105, col 27 of module missionnaires_et_cannibales: 2
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 105, col 18 to line 105, col 27 of module missionnaires_et_cannibales: 8
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 106, col 8 to line 106, col 34 of module missionnaires_et_cannibales: 2
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 107, col 8 to line 107, col 21 of module missionnaires_et_cannibales: 10
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 107, col 8 to line 107, col 11 of module missionnaires_et_cannibales: 8
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 108, col 8 to line 108, col 21 of module missionnaires_et_cannibales: 2
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 109, col 8 to line 109, col 15 of module missionnaires_et_cannibales: 4
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 109, col 8 to line 109, col 14 of module missionnaires_et_cannibales: 4
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  ||line 29, col 5 to line 30, col 41 of module missionnaires_et_cannibales: 4
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |||line 29, col 9 to line 29, col 37 of module missionnaires_et_cannibales: 4
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |||line 30, col 9 to line 30, col 40 of module missionnaires_et_cannibales: 4
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  ||||line 30, col 10 to line 30, col 25 of module missionnaires_et_cannibales: 4
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  ||||line 30, col 31 to line 30, col 40 of module missionnaires_et_cannibales: 3
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2772:0 @!@!@
+<C_M_toLeft line 111, col 1 to line 111, col 10 of module missionnaires_et_cannibales>: 1:3
+@!@!@ENDMSG 2772 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 112, col 8 to line 112, col 17 of module missionnaires_et_cannibales: 3
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 112, col 8 to line 112, col 13 of module missionnaires_et_cannibales: 16
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 113, col 8 to line 113, col 17 of module missionnaires_et_cannibales: 3
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 113, col 8 to line 113, col 13 of module missionnaires_et_cannibales: 14
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 114, col 8 to line 114, col 25 of module missionnaires_et_cannibales: 3
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 114, col 17 to line 114, col 25 of module missionnaires_et_cannibales: 9
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 115, col 8 to line 115, col 27 of module missionnaires_et_cannibales: 3
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 115, col 18 to line 115, col 27 of module missionnaires_et_cannibales: 9
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 116, col 8 to line 116, col 25 of module missionnaires_et_cannibales: 3
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 116, col 17 to line 116, col 25 of module missionnaires_et_cannibales: 9
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 117, col 8 to line 117, col 27 of module missionnaires_et_cannibales: 3
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 117, col 18 to line 117, col 27 of module missionnaires_et_cannibales: 9
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 118, col 8 to line 118, col 21 of module missionnaires_et_cannibales: 12
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 118, col 8 to line 118, col 11 of module missionnaires_et_cannibales: 9
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 119, col 8 to line 119, col 21 of module missionnaires_et_cannibales: 3
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 120, col 8 to line 120, col 15 of module missionnaires_et_cannibales: 5
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 120, col 8 to line 120, col 14 of module missionnaires_et_cannibales: 5
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  ||line 29, col 5 to line 30, col 41 of module missionnaires_et_cannibales: 5
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |||line 29, col 9 to line 29, col 37 of module missionnaires_et_cannibales: 5
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  ||||line 29, col 10 to line 29, col 23 of module missionnaires_et_cannibales: 5
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  ||||line 29, col 29 to line 29, col 37 of module missionnaires_et_cannibales: 2
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |||line 30, col 9 to line 30, col 40 of module missionnaires_et_cannibales: 3
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2772:0 @!@!@
+<C_toLeft line 122, col 1 to line 122, col 8 of module missionnaires_et_cannibales>: 5:6
+@!@!@ENDMSG 2772 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 123, col 8 to line 123, col 17 of module missionnaires_et_cannibales: 6
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 123, col 8 to line 123, col 13 of module missionnaires_et_cannibales: 16
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 124, col 8 to line 124, col 25 of module missionnaires_et_cannibales: 6
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 124, col 17 to line 124, col 25 of module missionnaires_et_cannibales: 14
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 125, col 8 to line 125, col 26 of module missionnaires_et_cannibales: 6
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 125, col 18 to line 125, col 26 of module missionnaires_et_cannibales: 14
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 126, col 8 to line 126, col 34 of module missionnaires_et_cannibales: 6
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 127, col 8 to line 127, col 21 of module missionnaires_et_cannibales: 20
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 127, col 8 to line 127, col 11 of module missionnaires_et_cannibales: 14
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 128, col 8 to line 128, col 21 of module missionnaires_et_cannibales: 6
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 129, col 8 to line 129, col 15 of module missionnaires_et_cannibales: 8
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 129, col 8 to line 129, col 14 of module missionnaires_et_cannibales: 8
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  ||line 29, col 5 to line 30, col 41 of module missionnaires_et_cannibales: 8
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |||line 29, col 9 to line 29, col 37 of module missionnaires_et_cannibales: 8
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  ||||line 29, col 10 to line 29, col 23 of module missionnaires_et_cannibales: 8
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  ||||line 29, col 29 to line 29, col 37 of module missionnaires_et_cannibales: 5
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |||line 30, col 9 to line 30, col 40 of module missionnaires_et_cannibales: 6
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  ||||line 30, col 10 to line 30, col 25 of module missionnaires_et_cannibales: 6
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  ||||line 30, col 31 to line 30, col 40 of module missionnaires_et_cannibales: 2
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2772:0 @!@!@
+<M_toLeft line 131, col 1 to line 131, col 8 of module missionnaires_et_cannibales>: 1:2
+@!@!@ENDMSG 2772 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 132, col 8 to line 132, col 17 of module missionnaires_et_cannibales: 2
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 132, col 8 to line 132, col 13 of module missionnaires_et_cannibales: 16
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 133, col 8 to line 133, col 25 of module missionnaires_et_cannibales: 2
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 133, col 17 to line 133, col 25 of module missionnaires_et_cannibales: 10
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 134, col 8 to line 134, col 26 of module missionnaires_et_cannibales: 2
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 134, col 18 to line 134, col 26 of module missionnaires_et_cannibales: 10
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 135, col 8 to line 135, col 34 of module missionnaires_et_cannibales: 2
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 136, col 8 to line 136, col 21 of module missionnaires_et_cannibales: 12
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 136, col 8 to line 136, col 11 of module missionnaires_et_cannibales: 10
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 137, col 8 to line 137, col 21 of module missionnaires_et_cannibales: 2
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 138, col 8 to line 138, col 15 of module missionnaires_et_cannibales: 5
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 138, col 8 to line 138, col 14 of module missionnaires_et_cannibales: 5
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  ||line 29, col 5 to line 30, col 41 of module missionnaires_et_cannibales: 5
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |||line 29, col 9 to line 29, col 37 of module missionnaires_et_cannibales: 5
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  ||||line 29, col 10 to line 29, col 23 of module missionnaires_et_cannibales: 5
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  ||||line 29, col 29 to line 29, col 37 of module missionnaires_et_cannibales: 1
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |||line 30, col 9 to line 30, col 40 of module missionnaires_et_cannibales: 4
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  ||||line 30, col 10 to line 30, col 25 of module missionnaires_et_cannibales: 4
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  ||||line 30, col 31 to line 30, col 40 of module missionnaires_et_cannibales: 3
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2202:0 @!@!@
+End of statistics.
+@!@!@ENDMSG 2202 @!@!@
+@!@!@STARTMSG 2200:0 @!@!@
+Progress(13) at 2022-02-16 17:14:24: 35 states generated (2,305 s/min), 16 distinct states found (1,053 ds/min), 0 states left on queue.
+@!@!@ENDMSG 2200 @!@!@
+@!@!@STARTMSG 2199:0 @!@!@
+35 states generated, 16 distinct states found, 0 states left on queue.
+@!@!@ENDMSG 2199 @!@!@
+@!@!@STARTMSG 2194:0 @!@!@
+The depth of the complete state graph search is 13.
+@!@!@ENDMSG 2194 @!@!@
+@!@!@STARTMSG 2268:0 @!@!@
+The average outdegree of the complete state graph is 1 (minimum is 0, the maximum 3 and the 95th percentile is 3).
+@!@!@ENDMSG 2268 @!@!@
+@!@!@STARTMSG 2186:0 @!@!@
+Finished in 936ms at (2022-02-16 17:14:24)
+@!@!@ENDMSG 2186 @!@!@

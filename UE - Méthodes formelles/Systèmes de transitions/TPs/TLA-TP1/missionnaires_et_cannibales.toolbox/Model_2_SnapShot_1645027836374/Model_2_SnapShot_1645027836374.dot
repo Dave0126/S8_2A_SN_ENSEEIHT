@@ -1,0 +1,47 @@
+strict digraph DiskGraph {
+edge [colorscheme="paired12"]
+nodesep=0.35;
+subgraph cluster_graph {
+color="white";
+524993135067279719 [label="/\\ cLeft = 3\n/\\ Boat = \"Left\"\n/\\ mRight = 0\n/\\ mLeft = 3\n/\\ cRight = 0",style = filled]
+524993135067279719 -> 6169722739352294114 [label="",color="2",fontcolor="2"];
+6169722739352294114 [label="/\\ cLeft = 1\n/\\ Boat = \"Right\"\n/\\ mRight = 0\n/\\ mLeft = 3\n/\\ cRight = 2"];
+524993135067279719 -> 5592546520915260780 [label="",color="3",fontcolor="3"];
+5592546520915260780 [label="/\\ cLeft = 2\n/\\ Boat = \"Right\"\n/\\ mRight = 1\n/\\ mLeft = 2\n/\\ cRight = 1"];
+6169722739352294114 -> 524993135067279719 [label="",color="4",fontcolor="4"];
+524993135067279719 -> -1277714444381209011 [label="",color="5",fontcolor="5"];
+-1277714444381209011 [label="/\\ cLeft = 2\n/\\ Boat = \"Right\"\n/\\ mRight = 0\n/\\ mLeft = 3\n/\\ cRight = 1"];
+6169722739352294114 -> 5614585548359193318 [label="",color="6",fontcolor="6"];
+5614585548359193318 [label="/\\ cLeft = 2\n/\\ Boat = \"Left\"\n/\\ mRight = 0\n/\\ mLeft = 3\n/\\ cRight = 1"];
+-1277714444381209011 -> 524993135067279719 [label="",color="6",fontcolor="6"];
+5614585548359193318 -> -8030252529576289282 [label="",color="2",fontcolor="2"];
+-8030252529576289282 [label="/\\ cLeft = 0\n/\\ Boat = \"Right\"\n/\\ mRight = 0\n/\\ mLeft = 3\n/\\ cRight = 3"];
+5614585548359193318 -> 6169722739352294114 [label="",color="5",fontcolor="5"];
+5614585548359193318 -> 5592546520915260780 [label="",color="7",fontcolor="7"];
+-8030252529576289282 -> 5614585548359193318 [label="",color="4",fontcolor="4"];
+-8030252529576289282 -> -7922556233810708891 [label="",color="6",fontcolor="6"];
+-7922556233810708891 [label="/\\ cLeft = 1\n/\\ Boat = \"Left\"\n/\\ mRight = 0\n/\\ mLeft = 3\n/\\ cRight = 2"];
+5592546520915260780 -> 5614585548359193318 [label="",color="8",fontcolor="8"];
+-7922556233810708891 -> -1817739706965118165 [label="",color="9",fontcolor="9"];
+-1817739706965118165 [label="/\\ cLeft = 1\n/\\ Boat = \"Right\"\n/\\ mRight = 2\n/\\ mLeft = 1\n/\\ cRight = 2"];
+-7922556233810708891 -> -8030252529576289282 [label="",color="5",fontcolor="5"];
+-1817739706965118165 -> -7922556233810708891 [label="",color="10",fontcolor="10"];
+{rank = same; 524993135067279719;}
+{rank = same; 6169722739352294114;-1277714444381209011;5592546520915260780;}
+{rank = same; 5614585548359193318;}
+{rank = same; -8030252529576289282;}
+{rank = same; -7922556233810708891;}
+{rank = same; -1817739706965118165;}
+}
+subgraph cluster_legend {graph[style=bold];label = "Next State Actions" style="solid"
+node [ labeljust="l",colorscheme="paired12",style=filled,shape=record ]
+C_M_toRight [label="C_M_toRight",fillcolor=3]
+C_C_toLeft [label="C_C_toLeft",fillcolor=4]
+M_toLeft [label="M_toLeft",fillcolor=8]
+M_toRight [label="M_toRight",fillcolor=7]
+M_M_toRight [label="M_M_toRight",fillcolor=9]
+C_C_toRight [label="C_C_toRight",fillcolor=2]
+C_toRight [label="C_toRight",fillcolor=5]
+C_toLeft [label="C_toLeft",fillcolor=6]
+M_M_toLeft [label="M_M_toLeft",fillcolor=10]
+}}
