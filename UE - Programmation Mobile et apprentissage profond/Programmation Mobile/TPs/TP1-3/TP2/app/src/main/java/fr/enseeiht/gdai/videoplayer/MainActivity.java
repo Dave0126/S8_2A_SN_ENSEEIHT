@@ -125,7 +125,6 @@ public class MainActivity extends AppCompatActivity {
 
         RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(videoWidth, videoHeight);
         surfaceView.setLayoutParams(layoutParams);
-        surfaceView.setG
     }
 
     private void readyPlay() {

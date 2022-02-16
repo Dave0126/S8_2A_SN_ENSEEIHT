@@ -16,7 +16,7 @@ type errorType =
 (* Définition du type des valeurs renvoyées par l'interprète *)
 (* ======================================================== *)
 type valueType =
-  | FrozenValue of (ast * environment)        (* Fermeture fonctionnelle *) 
+  | FrozenValue of (ast * environment)        (* Fermeture fonctionnelle *)
   | IntegerValue of int                       (* Valeur entière *)
   | BooleanValue of bool                      (* Valeur booléenne *)
   | ErrorValue of errorType                   (* Valeur représentant une erreur *)
@@ -271,4 +271,3 @@ let rec value_of_expr expr env =
     ruleLetrec _env _ident _bvalue _bin = 
     let envLetRec = ((_ident,(FrozenValue ((LetrecNode (_ident,_bvalue,_bvalue)),_env)))::_env) in
     (value_of_expr _bin envLetRec)
-

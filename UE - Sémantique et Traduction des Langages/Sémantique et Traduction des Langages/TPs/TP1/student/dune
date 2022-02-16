@@ -3,9 +3,11 @@
 (menhir
  (modules parser))
 
-;; (executable
- ;; (name Main))
+; Pour générer l'exécutable dans _build/default
+; (executable
+;  (name Main))
 
+; Pour exécuter automatiquement les tests
 (library
 (name tests)
 (inline_tests)

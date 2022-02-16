@@ -1,8 +1,4 @@
 open Ast 
-open Lexer
-open Parser
-open Semantics
-open Lexing
 open MiniML
 
 let%test _ = ( (miniML "../../exemples/exemple-00.mml") = (IntegerValue 3))
