@@ -1,0 +1,4 @@
+  File "trace_exemple_simple.py", line 20
+    print(f'fact({x}) =', fact(x))
+                       ^
+SyntaxError: invalid syntax
