@@ -10,15 +10,24 @@ import android.database.Cursor;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.net.Uri;
+import android.os.AsyncTask;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.SystemClock;
 import android.provider.MediaStore;
+import android.text.format.DateUtils;
+import android.util.Log;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RelativeLayout;
+import android.widget.SeekBar;
+import android.widget.SeekBar.OnSeekBarChangeListener;
 import android.widget.TextView;
 import android.widget.VideoView;
+
+import java.io.IOException;
 
 public class MainActivity extends AppCompatActivity {
     private Button btnSelect;
@@ -30,11 +39,26 @@ public class MainActivity extends AppCompatActivity {
     private SurfaceView surfaceView;
     private SurfaceHolder surfaceHolder;
     private MediaPlayer mediaPlayer;
+    private SeekBar seekBar;
     // private VideoView videoView;
 
     private Uri selectVideo;
 
     private static final int SELECT_VIDEO = 100;
+
+    class MyThread extends Thread{
+        @Override
+        public void run() {
+            super.run();
+            while(seekBar.getProgress()<seekBar.getMax()){
+                //获取当前音乐播放的位置
+                int currentPosition=mediaPlayer.getCurrentPosition();
+                //让进度条跟着时间走
+                seekBar.setProgress(currentPosition);
+
+            }
+        }
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +70,27 @@ public class MainActivity extends AppCompatActivity {
         btnPause = (Button) findViewById(R.id.btnPause);
         URIPath = (TextView) findViewById(R.id.tvURIPath);
 
+        seekBar = (SeekBar) findViewById(R.id.seekBar);
+        // 为进度条添加进度更改事件
+        seekBar.setOnSeekBarChangeListener(new OnSeekBarChangeListener() {
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+
+                if(mediaPlayer!=null)
+                    mediaPlayer.seekTo(seekBar.getProgress());
+
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+            }
+
+        });
+
         surfaceView = (SurfaceView) findViewById(R.id.surfaceView);
         surfaceHolder = surfaceView.getHolder();
         surfaceHolder.setKeepScreenOn(true);
@@ -54,7 +99,6 @@ public class MainActivity extends AppCompatActivity {
             public void surfaceCreated(@NonNull SurfaceHolder surfaceHolder) {
                 readyPlay();
             }
-
 
             @Override
             public void surfaceChanged(@NonNull SurfaceHolder surfaceHolder, int i, int i1, int i2) {
@@ -66,6 +110,7 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+
         mediaPlayer = new MediaPlayer();
         mediaPlayer.setOnVideoSizeChangedListener(new MediaPlayer.OnVideoSizeChangedListener() {
             @Override
@@ -92,7 +137,17 @@ public class MainActivity extends AppCompatActivity {
         btnRestart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                mediaPlayer.start();
+                try {
+                    mediaPlayer.stop();
+                    try {
+                        mediaPlayer.prepare();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                    mediaPlayer.start();
+                } catch (Exception e){
+                    e.printStackTrace();
+                }
             }
         });
 
@@ -129,6 +184,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void readyPlay() {
         mediaPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC);
+        //mediaPlayer.setOnVideoSizeChangedListener(this);
         try{
             mediaPlayer.setDataSource(this, selectVideo);
         } catch (Exception e) {
@@ -137,7 +193,22 @@ public class MainActivity extends AppCompatActivity {
         mediaPlayer.setLooping(true);
         mediaPlayer.setDisplay(surfaceHolder);
         mediaPlayer.prepareAsync();
+        Log.i("DURATION_OF_VIDEO", String.valueOf(mediaPlayer.getDuration()));
+        seekBar.setMax(mediaPlayer.getDuration());
+        /*
+        mediaPlayer.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+            @Override
+            public void onPrepared(MediaPlayer mediaPlayer) {
 
+                int length = mediaPlayer.getDuration(); // duration in time in millis
+                Log.i("TIME_OF_VIDEO", String.valueOf(mediaPlayer.getDuration()));
+
+                String durationText = DateUtils.formatElapsedTime(length / 1000); // converting time in millis to minutes:second format eg 14:15 min
+                seekBar.setMax(length);// use this to set seekbar length and then update every second
+
+            }
+        });
+         */
     }
 
 
@@ -156,5 +227,7 @@ public class MainActivity extends AppCompatActivity {
             URIPath.setText(selectVideo.toString());
         }
     }
+
+
 
 }

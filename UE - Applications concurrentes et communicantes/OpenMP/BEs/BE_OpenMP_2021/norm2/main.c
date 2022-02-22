@@ -94,29 +94,66 @@ double dnorm2_seq(double *x, int n){
   return sqrt(res);
   
 }
-
+/*----------------- func: dnorm2_par_red(double *x, int n) -------------------*/
+// 第一及第二种方法
 double dnorm2_par_red(double *x, int n){
   int i;
   double res;
 
   res = 0.0;
-
-  for(i=0; i<n; i++)
-    res += x[i]*x[i];
-
-  return sqrt(res);
-  
+#pragma omp parallel for 
+  {
+    for(i=0; i<n; i++)
+#pragma omp critical // 互斥地访问临界区，自加操作。也可以用原子操作，如下所示：
+//#pragma omp atomic update
+    {
+      res += x[i]*x[i];
+    }
+    return sqrt(res);
+  }
 }
 
-double dnorm2_par_nored(double *x, int n){
-  int i, iam;
+// 第三种方法：
+double dnorm2_par_red(double *x, int n){
+  int i;
   double res;
 
   res = 0.0;
-
-  for(i=0; i<n; i++)
-    res += x[i]*x[i];
-
-  return sqrt(res);
-  
+#pragma omp parallel for reduction (+:res)
+  {
+    for(i=0; i<n; i++)
+    {
+      res += x[i]*x[i];
+    }
+    return sqrt(res);
+  }
 }
+/*------------------------------------------------------------------------------*/
+
+
+/*----------------- func: dnorm2_par_nored(double *x, int n) -------------------*/
+double dnorm2_par_nored(double *x, int n){
+  int i, iam;
+  double res;
+  double *lres;
+
+  res = 0.0;
+
+#pragma omp parallel
+  {
+#pragma omp single
+    {
+      lres = (double*) malloc (sizeof(double)*omp_get_num_threads());
+    }
+    lres[omp_get_num_threads()] = 0.0;
+#pragma omp for
+    {
+      for(i=0; i<n; i++)
+      lres[omp_get_num_threads()] += x[i]*x[i];
+    }  
+#pragma omp atomic update
+    res += lres[omp_get_num_threads()];
+  }
+  return sqrt(res);
+}
+/*------------------------------------------------------------------------------*/

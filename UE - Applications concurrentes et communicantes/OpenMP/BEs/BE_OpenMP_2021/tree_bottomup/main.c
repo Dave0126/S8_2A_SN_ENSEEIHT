@@ -35,6 +35,29 @@ int main(int argc, char **argv){
 void bottom_up(int nleaves, struct node **leaves, int nnodes){
 
   /* Implement this routine */
+  int l,i,v;
+  struct node *curr;
+  int *visited;
+
+  visited = (int*)malloc(sizeof(int)*nnodes);
+  for(l=0; l<nnodes; i++){
+    visited[i] = 0;
+  }
+
+#pragma omp parallel for private(curr)
+  for(l=0; l<nleaves; l++){
+    curr = leaves[l];
+    while (curr){
+#pragma omp atomic capture
+      v = visited[curr->id-1]++;
+      if (v > 0){
+        break;
+      } else {
+        process_node(curr);
+        curr = curr -> parent;
+      }
+    }
+  }
 
 }
     

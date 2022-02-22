@@ -7,85 +7,90 @@
     android:visibility="visible"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/URITextView"
-        android:layout_width="66dp"
-        android:layout_height="49dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginBottom="20dp"
-        android:text="@string/URILable"
-        app:layout_constraintBottom_toTopOf="@+id/btnSelect"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="411dp"
+        android:layout_height="453dp"
+        android:layout_marginTop="7dp"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@+id/surfaceView">
 
-    <Button
-        android:id="@+id/btnSelect"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:layout_weight="1"
-        android:text="@string/btnSelect"
-        app:layout_constraintEnd_toStartOf="@+id/btnPlay"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/URITextView" />
+        <SeekBar
+            android:id="@+id/seekBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"/>
 
-    <Button
-        android:id="@+id/btnPlay"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
-        android:layout_weight="1"
-        android:text="@string/btnPlay"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/btnSelect"
-        app:layout_constraintTop_toBottomOf="@+id/URITextView" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
 
-    <TextView
-        android:id="@+id/tvURIPath"
-        android:layout_width="292dp"
-        android:layout_height="51dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginBottom="18dp"
-        android:text="@string/URIPath"
-        app:layout_constraintBottom_toTopOf="@+id/btnSelect"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/URITextView"
-        app:layout_constraintTop_toTopOf="parent" />
+            <TextView
+                android:id="@+id/URITextView"
+                android:layout_width="66dp"
+                android:layout_height="49dp"
+                android:text="@string/URILable" />
 
-    <Button
-        android:id="@+id/btnRestart"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="18dp"
-        android:text="@string/btnRestart"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnSelect" />
+            <TextView
+                android:id="@+id/tvURIPath"
+                android:layout_width="292dp"
+                android:layout_height="51dp"
+                android:text="@string/URIPath" />
+        </LinearLayout>
 
-    <Button
-        android:id="@+id/btnPause"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="47dp"
-        android:layout_marginTop="18dp"
-        android:layout_marginEnd="15dp"
-        android:text="@string/btnPause"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/btnRestart"
-        app:layout_constraintTop_toBottomOf="@+id/btnPlay" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btnSelect"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:text="@string/btnSelect" />
+
+            <Button
+                android:id="@+id/btnPlay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/btnPlay" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btnRestart"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:text="@string/btnRestart" />
+
+            <Button
+                android:id="@+id/btnPause"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/btnPause" />
+
+        </LinearLayout>
+
+    </LinearLayout>
 
     <SurfaceView
         android:id="@+id/surfaceView"
-        android:layout_width="412dp"
-        android:layout_height="281dp"
-        android:layout_marginTop="103dp"
-        android:layout_marginBottom="164dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnRestart" />
+        android:layout_width="match_parent"
+        android:layout_height="270dp"
+        tools:layout_editor_absoluteX="-16dp"
+        tools:layout_editor_absoluteY="1dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

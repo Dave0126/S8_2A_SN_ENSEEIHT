@@ -83,16 +83,18 @@ void sequential_nn(layer *Layers, data *Datas, int N, int m, int L){
 
 void parallel_nn_loops(layer *Layers, data *Datas, int N, int m, int L){
   int i, j, l;
-
-  for(l=0; l<L; l++){
-    for(i=0; i<N; i++)
-      for(j=0; j<N; j++){
-        block_mult(Layers[l].W[i][j], Datas[l].X[j], Datas[l+1].X[i], m);
-      }
-    
-    for(i=0; i<N; i++)
-      block_bias_act(Layers[l].b[i], Datas[l+1].X[i], m);
-    
+#pragma omp parallel for private (i,j,l)
+  {
+    for(l=0; l<L; l++){
+      for(i=0; i<N; i++)
+        for(j=0; j<N; j++){
+          block_mult(Layers[l].W[i][j], Datas[l].X[j], Datas[l+1].X[i], m);
+        }
+  #pragma omp parallel for    
+      for(i=0; i<N; i++)
+        block_bias_act(Layers[l].b[i], Datas[l+1].X[i], m);
+      
+    }
   }
 }
 
@@ -100,16 +102,25 @@ void parallel_nn_loops(layer *Layers, data *Datas, int N, int m, int L){
 
 void parallel_nn_tasks(layer *Layers, data *Datas, int N, int m, int L){
   int i, j, l;
-
-  for(l=0; l<L; l++){
-    for(i=0; i<N; i++)
-      for(j=0; j<N; j++){
-        block_mult(Layers[l].W[i][j], Datas[l].X[j], Datas[l+1].X[i], m);
+#pragma omp parallel
+  {
+#pragma omp single
+    {
+      for(l=0; l<L; l++){
+        for(i=0; i<N; i++)
+          for(j=0; j<N; j++){
+#pragma omp task depend(in:Datas[l].X[j]) depend(inout:Datas[l+1].X[i]) firstprivate(i,j,l)
+            block_mult(Layers[l].W[i][j], Datas[l].X[j], Datas[l+1].X[i], m);
+          }
+        
+        for(i=0; i<N; i++)
+#pragma omp task depend(inout: Datas[l+1].X[i]) fristprivate(i,l)
+          block_bias_act(Layers[l].b[i], Datas[l+1].X[i], m);
       }
-    
-    for(i=0; i<N; i++)
-      block_bias_act(Layers[l].b[i], Datas[l+1].X[i], m);
-    
+      
+        
+    }
   }
+  
 }
 

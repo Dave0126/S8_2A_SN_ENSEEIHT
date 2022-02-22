@@ -46,12 +46,33 @@ void pipeline(data *datas, resource *resources, int ndatas, int nsteps){
   int d, s;
   
   /* Loop over all the data */
+  #pragma omp parallel for
   for (d=0; d<ndatas; d++){
     /* Loop over all the steps */
     for (s=0; s<nsteps; s++){
+  #pragma omp critical
       process_data(datas, d, s, &(resources[s]));
     }
   }
-    
+}
 
+void pipeline(data *datas, resource *resources, int ndatas, int nsteps){
+
+  int d, s;
+  omp_lock_t *locks;
+  for(s=0; s<nsteps; s++){
+    omp_init_lock(locks + s);
+  }
+  
+  /* Loop over all the data */
+  #pragma omp parallel for private(s)
+  for (d=0; d<ndatas; d++){
+    /* Loop over all the steps */
+    for (s=0; s<nsteps; s++){
+      omp_set_lock(locks + s);
+      process_data(datas, d, s, &(resources[s]));
+      omp_unset_lock(locks + s);
+    }
+  }
+  omp_destroy_lock(locks);
 }
