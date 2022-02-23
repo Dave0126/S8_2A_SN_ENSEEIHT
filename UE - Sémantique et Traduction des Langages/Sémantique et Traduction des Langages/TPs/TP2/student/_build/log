@@ -4,10 +4,10 @@
 # "/Users/dave/Desktop/\231\149\153\229\173\166\230\150\135\228\187\182/ENSEEIHT/2021-2022/SN2/S8_2A_SN_ENSEEIHT/UE
 # - Se\204\129mantique et Traduction des Langages/Se\204\129mantique et
 # Traduction des Langages/TPs/TP2/student"
-$ /usr/bin/getconf _NPROCESSORS_ONLN > /var/folders/1p/0xz6_bsj53g6kk0lcgwc_xkm0000gn/T/dune8ab245.output 2> /dev/null
+$ /usr/bin/getconf _NPROCESSORS_ONLN > /var/folders/1p/0xz6_bsj53g6kk0lcgwc_xkm0000gn/T/dune47a08e.output 2> /dev/null
 # Auto-detected concurrency: 8
 # disable binary cache
-$ /Users/dave/.opam/4.12.0/bin/ocamlc.opt -config > /var/folders/1p/0xz6_bsj53g6kk0lcgwc_xkm0000gn/T/dunec9eef1.output
+$ /Users/dave/.opam/4.12.0/bin/ocamlc.opt -config > /var/folders/1p/0xz6_bsj53g6kk0lcgwc_xkm0000gn/T/dune745c64.output
 # Dune context:
 #  { name = "default"
 #  ; kind = "default"
@@ -111,13 +111,12 @@ $ /Users/dave/.opam/4.12.0/bin/ocamlc.opt -config > /var/folders/1p/0xz6_bsj53g6
 #      ; windows_unicode = false
 #      }
 #  }
-$ (cd _build/default && /Users/dave/.opam/4.12.0/bin/ocamlc.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62-40 -strict-sequence -strict-formats -short-paths -keep-locs -g -bin-annot -I .tests.objs/byte -I /Users/dave/.opam/4.12.0/lib/base -I /Users/dave/.opam/4.12.0/lib/base/base_internalhash_types -I /Users/dave/.opam/4.12.0/lib/base/caml -I /Users/dave/.opam/4.12.0/lib/base/shadow_stdlib -I /Users/dave/.opam/4.12.0/lib/jane-street-headers -I /Users/dave/.opam/4.12.0/lib/ppx_compare/runtime-lib -I /Users/dave/.opam/4.12.0/lib/ppx_enumerate/runtime-lib -I /Users/dave/.opam/4.12.0/lib/ppx_hash/runtime-lib -I /Users/dave/.opam/4.12.0/lib/ppx_inline_test/config -I /Users/dave/.opam/4.12.0/lib/ppx_inline_test/runtime-lib -I /Users/dave/.opam/4.12.0/lib/ppx_sexp_conv/runtime-lib -I /Users/dave/.opam/4.12.0/lib/sexplib0 -I /Users/dave/.opam/4.12.0/lib/time_now -no-alias-deps -opaque -open Tests -o .tests.objs/byte/tests__Main.cmo -c -impl Main.pp.ml)
-> File "Main.ml", line 5, characters 85-86:
-> 5 |      print_endline ((Semantics.string_of_value v) ^ " [ " ^ (Semantics.string_of_mem m) ^ " ]: " ^ (Types.string_of_type t))
->                                                                                          ^
-> Error: This expression has type
->          (Semantics.valueType * Semantics.valueType) list
->        but an expression was expected of type
->          (string * Semantics.valueType) list
->        Type Semantics.valueType is not compatible with type string 
+$ (cd _build/default && .ppx/bfcab61e6a21ecf6d2f80029fc1ef484/ppx.exe --cookie 'inline_tests="enabled"' --cookie 'library-name="tests"' -o Semantics.pp.ml --impl Semantics.ml -corrected-suffix .ppx-corrected -diff-cmd - -dump-ast)
+$ (cd _build/default && /Users/dave/.opam/4.12.0/bin/ocamldep.opt -modules -impl Semantics.pp.ml) > _build/default/.tests.objs/Semantics.pp.ml.d
+$ (cd _build/default && /Users/dave/.opam/4.12.0/bin/ocamlc.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62-40 -strict-sequence -strict-formats -short-paths -keep-locs -g -bin-annot -I .tests.objs/byte -I /Users/dave/.opam/4.12.0/lib/base -I /Users/dave/.opam/4.12.0/lib/base/base_internalhash_types -I /Users/dave/.opam/4.12.0/lib/base/caml -I /Users/dave/.opam/4.12.0/lib/base/shadow_stdlib -I /Users/dave/.opam/4.12.0/lib/jane-street-headers -I /Users/dave/.opam/4.12.0/lib/ppx_compare/runtime-lib -I /Users/dave/.opam/4.12.0/lib/ppx_enumerate/runtime-lib -I /Users/dave/.opam/4.12.0/lib/ppx_hash/runtime-lib -I /Users/dave/.opam/4.12.0/lib/ppx_inline_test/config -I /Users/dave/.opam/4.12.0/lib/ppx_inline_test/runtime-lib -I /Users/dave/.opam/4.12.0/lib/ppx_sexp_conv/runtime-lib -I /Users/dave/.opam/4.12.0/lib/sexplib0 -I /Users/dave/.opam/4.12.0/lib/time_now -no-alias-deps -opaque -open Tests -o .tests.objs/byte/tests__Semantics.cmo -c -impl Semantics.pp.ml)
+> File "Semantics.ml", line 415, characters 35-44:
+> 415 |       (ReferenceValue reference), (reference,result)::mem_expr
+>                                          ^^^^^^^^^
+> Error: This expression has type string but an expression was expected of type
+>          valueType
 [2]

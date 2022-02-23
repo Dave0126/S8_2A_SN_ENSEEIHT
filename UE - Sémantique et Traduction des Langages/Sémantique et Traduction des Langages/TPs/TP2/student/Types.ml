@@ -297,20 +297,12 @@ let rec type_of_expr expr env =
   and
     (* ...............A COMPLETER .......................................*)
     ruleFunction _env _par _body = 
-      let t_par = newVariable() in
+    let t_par = newVariable() in
         (FunctionType(t_par, type_of_expr _body ((_par, t_par)::_env)))
-    
 
   and
     (* ...............A COMPLETER .......................................*)
-    (** 未完成 *)
-    ruleCall _env _fct _par = 
-      (*
-      let t_par = (type_of_expr _par _env) in
-        let t_fct = (type_of_expr _fct _env) in
-        *)
-          UnitType
-          
+    ruleCall _env _fct _par = ErrorType
 
   and
     (* ..................................................................*)
@@ -334,24 +326,23 @@ let rec type_of_expr expr env =
         match t_expr with
         | _ -> ReferenceType(t_expr)
 
-
   and
     (* ...............A COMPLETER .......................................*)
     ruleRead _env _expr = 
-      let t_expr = (type_of_expr _expr _env) in
+    let t_expr = (type_of_expr _expr _env) in
         match t_expr with
         | ReferenceType(t_expr) -> t_expr
         | _ -> ErrorType
 
   and
     (* ...............A COMPLETER .......................................*)
-    (** 未完成 *)
     ruleWrite _env _left _right = 
-      let t_left = (type_of_expr _left _env) in
+    let t_left = (type_of_expr _left _env) in
         let t_right = (type_of_expr _right _env) in
           match t_left with
-          | ReferenceType(t_left) -> t_left
-          | _ -> t_right
+          | ReferenceType(t_left) -> let unify_left, unify_right = unify t_left t_right in
+            if unify_right then UnitType else ErrorType
+          | _ -> ErrorType
 
   and
     (* ...............A COMPLETER .......................................*)

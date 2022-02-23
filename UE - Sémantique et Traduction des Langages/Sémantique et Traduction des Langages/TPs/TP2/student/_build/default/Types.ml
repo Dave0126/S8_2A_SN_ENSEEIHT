@@ -296,21 +296,11 @@ let rec type_of_expr expr env =
 
   and
     (* ...............A COMPLETER .......................................*)
-    ruleFunction _env _par _body = 
-      let t_par = newVariable() in
-        (FunctionType(t_par, type_of_expr _body ((_par, t_par)::_env)))
-    
+    ruleFunction _env _par _body = ErrorType
 
   and
     (* ...............A COMPLETER .......................................*)
-    (** 未完成 *)
-    ruleCall _env _fct _par = 
-      (*
-      let t_par = (type_of_expr _par _env) in
-        let t_fct = (type_of_expr _fct _env) in
-        *)
-          UnitType
-          
+    ruleCall _env _fct _par = ErrorType
 
   and
     (* ..................................................................*)
@@ -329,29 +319,15 @@ let rec type_of_expr expr env =
 
   and
     (* ...............A COMPLETER .......................................*)
-    ruleRef _env _expr = 
-      let t_expr = (type_of_expr _expr _env) in
-        match t_expr with
-        | _ -> ReferenceType(t_expr)
-
+    ruleRef _env _expr = ErrorType
 
   and
     (* ...............A COMPLETER .......................................*)
-    ruleRead _env _expr = 
-      let t_expr = (type_of_expr _expr _env) in
-        match t_expr with
-        | ReferenceType(t_expr) -> t_expr
-        | _ -> ErrorType
+    ruleRead _env _expr = ErrorType
 
   and
     (* ...............A COMPLETER .......................................*)
-    (** 未完成 *)
-    ruleWrite _env _left _right = 
-      let t_left = (type_of_expr _left _env) in
-        let t_right = (type_of_expr _right _env) in
-          match t_left with
-          | ReferenceType(t_left) -> t_left
-          | _ -> t_right
+    ruleWrite _env _left _right = ErrorType
 
   and
     (* ...............A COMPLETER .......................................*)
