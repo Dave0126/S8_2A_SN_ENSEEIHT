@@ -104,8 +104,8 @@ double dnorm2_par_red(double *x, int n){
 #pragma omp parallel for 
   {
     for(i=0; i<n; i++)
-#pragma omp critical // 互斥地访问临界区，自加操作。也可以用原子操作，如下所示：
-//#pragma omp atomic update
+#pragma omp critical          // 互斥地访问临界区，自加操作。也可以用原子操作，如下所示：
+// #pragma omp atomic update  // 原子操作临界区
     {
       res += x[i]*x[i];
     }

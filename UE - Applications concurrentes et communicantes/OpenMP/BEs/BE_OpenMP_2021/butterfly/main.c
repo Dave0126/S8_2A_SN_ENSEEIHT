@@ -95,17 +95,24 @@ void butterfly_par(int n, int l, int *array){
   int p, i, j, s;
 
   p = 0;
-  
-  while(p<l){
-    s = pow(2,p);
-    for(i=0; i<n; i+=2*s){
-      for(j=0; j<s; j++){
-        int r = operator(array[i+j],array[i+j+s]);
-        array[i+j]   = r;
-        array[i+j+s] = r;
+#pragma omp parallel
+  {
+#pragma omp single
+    {
+      while(p<l){
+        s = pow(2,p);
+        for(i=0; i<n; i+=2*s){
+          for(j=0; j<s; j++){
+  #pragma omp task depend(inout:array[i+j], array[i+j+s]) pristprivate(i,j,s){
+              int r = operator(array[i+j],array[i+j+s]);
+              array[i+j]   = r;
+              array[i+j+s] = r;
+            }
+          }
+        }
+        p+=1;
       }
     }
-    p+=1;
   }
 }
 

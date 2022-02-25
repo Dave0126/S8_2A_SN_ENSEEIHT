@@ -24,7 +24,11 @@ void lu_par_loop(Matrix A, info_type info){
        that this may be relatively inefficient due to the fact that
        there is a fork and a join at each iteration of the outer
        loop. A better parallelization is provided in the version
-       below. */
+       below. 
+       
+       提示：
+       这是并行化循环的最基本方法。 请注意，由于在外循环的每次迭代中都有
+       一个 fork 和一个 join，这可能相对低效。 以下版本提供了更好的并行化。*/
 #pragma omp parallel for
     for(j=i+1; j<info.NB; j++){
       /* Update column j with respect to the result of panel(A, i) */

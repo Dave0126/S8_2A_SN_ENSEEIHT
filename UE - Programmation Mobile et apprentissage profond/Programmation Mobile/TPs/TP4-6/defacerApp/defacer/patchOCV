@@ -1,0 +1,49 @@
+--- /Users/sgaspari/ownCloud/JavaCameraView.java	2015-01-31 14:34:27.000000000 +0100
++++ sdk/java/src/org/opencv/android/JavaCameraView.java	2015-01-31 14:04:52.000000000 +0100
+@@ -40,6 +40,8 @@
+     protected Camera mCamera;
+     protected JavaCameraFrame[] mCameraFrame;
+     private SurfaceTexture mSurfaceTexture;
++    
++private int previewFormat = ImageFormat.NV21;
+ 
+     public static class JavaCameraSizeAccessor implements ListItemAccessor {
+ 
+@@ -143,6 +145,10 @@
+                     Size frameSize = calculateCameraFrameSize(sizes, new JavaCameraSizeAccessor(), width, height);
+ 
+                     params.setPreviewFormat(ImageFormat.NV21);
++    // "generic" = android emulator
++    if (Build.BRAND.equalsIgnoreCase("generic") || Build.BRAND.equalsIgnoreCase("android") || Build.BRAND.equalsIgnoreCase("generic_x86_64"))
++    {
++        params.setPreviewFormat(ImageFormat.YV12);
++    }
+                     Log.d(TAG, "Set preview size to " + Integer.valueOf((int)frameSize.width) + "x" + Integer.valueOf((int)frameSize.height));
+                     params.setPreviewSize((int)frameSize.width, (int)frameSize.height);
+ 
+@@ -157,6 +163,7 @@
+ 
+                     mCamera.setParameters(params);
+                     params = mCamera.getParameters();
++    previewFormat = params.getPreviewFormat();
+ 
+                     mFrameWidth = params.getPreviewSize().width;
+                     mFrameHeight = params.getPreviewSize().height;
+@@ -288,8 +295,15 @@
+         }
+ 
+         public Mat rgba() {
+-            Imgproc.cvtColor(mYuvFrameData, mRgba, Imgproc.COLOR_YUV2RGBA_NV21, 4);
+-            return mRgba;
++//            Imgproc.cvtColor(mYuvFrameData, mRgba, Imgproc.COLOR_YUV2RGBA_NV21, 4);
++//            return mRgba;
++if (previewFormat == ImageFormat.NV21) {
++    Imgproc.cvtColor(mYuvFrameData, mRgba, Imgproc.COLOR_YUV2RGBA_NV21, 4);
++}
++else if (previewFormat == ImageFormat.YV12) {
++    Imgproc.cvtColor(mYuvFrameData, mRgba, Imgproc.COLOR_YUV2RGB_I420, 4);  // COLOR_YUV2RGBA_YV12 produces inverted colors
++}
++return mRgba;
+         }
+ 
+         public JavaCameraFrame(Mat Yuv420sp, int width, int height) {

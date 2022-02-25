@@ -1,0 +1,1 @@
+javah -verbose -jni -classpath "../../../build/intermediates/classes/debug/:../../../../../../../../dev/tools/android/OpenCV-2.4.10-android-sdk/sdk/java/bin/classes" -o DetectionBasedTracker_jni.h fr.enseeiht.defacer.DetectionBasedTracker
