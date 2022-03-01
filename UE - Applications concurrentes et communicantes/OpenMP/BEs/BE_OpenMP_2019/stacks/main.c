@@ -62,7 +62,7 @@ int main(int argc, char **argv){
 
 void stacks_seq(stack_t *stacks, int n){
 
-  int s;
+    int s;
   
   
   for(;;){
@@ -83,19 +83,22 @@ void stacks_seq(stack_t *stacks, int n){
 
 void stacks_par_critical(stack_t *stacks, int n){
 
-  int s;
+    int s;
   
-  
-  for(;;){
+#pragma omp parallel private(s)
+  {
+    for(;;){
 
-    /* Get the stack number s */
-    s = get_random_stack();
+      /* Get the stack number s */
+      s = get_random_stack();
 
-    if(s==-1) break;
-    
-    /* Push some value on stack s */
-    stacks[s].elems[stacks[s].cnt++] = process();
+      if(s==-1) break;
+      
+#pragma omp critical
+      /* Push some value on stack s */
+      stacks[s].elems[stacks[s].cnt++] = process();
 
+    }
   }
 }
 
@@ -105,18 +108,21 @@ void stacks_par_critical(stack_t *stacks, int n){
 void stacks_par_atomic(stack_t *stacks, int n){
 
   int s;
-  
-  
-  for(;;){
-
-    /* Get the stack number s */
-    s = get_random_stack();
-
-    if(s==-1) break;
     
-    /* Push some value on stack s */
-    stacks[s].elems[stacks[s].cnt++] = process();
+#pragma omp parallel private(s)
+  {
+    for(;;){
 
+      /* Get the stack number s */
+      s = get_random_stack();
+
+      if(s==-1) break;
+      
+#pragma omp atomic capture
+      /* Push some value on stack s */
+      stacks[s].elems[stacks[s].cnt++] = process();
+
+    }
   }
 }
 

@@ -92,17 +92,21 @@ void matmul(double **A, double *x, double *y, int n){
 void matmul_compact_row(double **Ac, double *x, double *y, int n, int b){
   
   int i, j;
-  
+#pragma omp parallel for  
   for(i=0; i<n; i++)
     y[i] = 0;
-  
-  for(j=0; j<n; j++){
-    for(i=j-b; i<j+b+1; i++){
-      if(i>=0 || i<n) {
-        y[i] += Ac[i-j+b][j]*x[j];
+
+#pragma omp parallel for private(i,j,b)
+  {
+    for(j=0; j<n; j++){
+      for(i=j-b; i<j+b+1; i++){
+        if(i>=0 || i<n) {
+          y[i] += Ac[i-j+b][j]*x[j];
+        }
       }
     }
   }
+  
   
   return;
   
@@ -112,16 +116,20 @@ void matmul_compact_row(double **Ac, double *x, double *y, int n, int b){
 void matmul_compact_diag(double **Ac, double *x, double *y, int n, int b){
   
   int i, j;
-  
+
+#pragma omp parallel for
   for(i=0; i<n; i++)
     y[i] = 0;
   
-  for(i=0; i<2*b+1; i++)
-    for(j=0; j<n; j++)
-      if((j-b+i)>=0 && (j-b+i)<n){
-        y[j-b+i] += Ac[i][j]*x[j];
-      }
-    
+#pragma omp parallel for private(i,j,b)
+  {
+    for(i=0; i<2*b+1; i++)
+      for(j=0; j<n; j++)
+        if((j-b+i)>=0 && (j-b+i)<n){
+          y[j-b+i] += Ac[i][j]*x[j];
+        }
+  }
+
   return;
   
 }

@@ -43,17 +43,25 @@ double dnorm2_par(double *x, int n){
   scale = 0.0;
   ssq   = 1.0;
 
-  for(i=0; i<n; i++){
-    if(x[i]!=0.0){
-      absxi = fabs(x[i]);
-      if(scale < absxi){
-        ssq = 1.0 + ssq*pow(scale/absxi,2);
-        scale = absxi;
-      } else {
-        ssq = ssq + pow(absxi/scale,2);
+#pragma omp parallel for
+  {
+    for(i=0; i<n; i++){
+      if(x[i]!=0.0){
+        absxi = fabs(x[i]);
+        if(scale < absxi){
+#pragma omp critical
+          {
+            ssq = 1.0 + ssq*pow(scale/absxi,2);
+            scale = absxi;
+          }
+        } else {
+#pragma omp critical
+          ssq = ssq + pow(absxi/scale,2);
+        }
       }
     }
   }
+  
 
   res = scale*sqrt(ssq);
 
