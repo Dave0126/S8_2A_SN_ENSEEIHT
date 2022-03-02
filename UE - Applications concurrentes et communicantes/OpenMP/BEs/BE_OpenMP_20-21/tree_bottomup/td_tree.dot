@@ -1,0 +1,14 @@
+graph G {
+node [color=black,
+fillcolor=white,
+shape=circle,
+style=filled
+];
+8 -- 7 
+7 -- 6 
+8 -- 5 
+5 -- 4 
+8 -- 3 
+3 -- 2 
+3 -- 1 
+}
