@@ -5,15 +5,13 @@
 /* This is a sequential routine for the LU factorization of a square
    matrix in block-columns */
 void lu_par_tasks(Matrix A, info_type info){
+  int i, j;
 
+  trace_init();
 #pragma omp parallel
   {
 #pragma omp single
     {
-      int i, j;
-
-      trace_init();
-      
       for(i=0; i<info.NB; i++){
         /* Do the panel */
         panel(A[i], i, info);
