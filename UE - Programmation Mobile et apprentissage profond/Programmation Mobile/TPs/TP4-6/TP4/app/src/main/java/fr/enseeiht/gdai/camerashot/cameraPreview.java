@@ -21,8 +21,9 @@ public class cameraPreview extends SurfaceView implements SurfaceHolder.Callback
     private Camera mCamera;
     private static final int PERMISSION_CAMERA_REQUEST_CODE = 0x00000012;
 
-    public cameraPreview(Context context) {
+    public cameraPreview(Context context, Camera camera) {
         super(context);
+        mCamera = camera;
         mHolder = getHolder();
         mHolder.addCallback(this);
     }
@@ -38,9 +39,12 @@ public class cameraPreview extends SurfaceView implements SurfaceHolder.Callback
 
     private Camera getCameraInstance() {
         Camera c = null;
+        /*
         if (ContextCompat.checkSelfPermission(context, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED){
             Log.e(TAG, "open camera no permission");
         }
+
+         */
         try {
             c = Camera.open();
         } catch (Exception e) {
@@ -50,7 +54,6 @@ public class cameraPreview extends SurfaceView implements SurfaceHolder.Callback
     }
 
     public void surfaceCreated(SurfaceHolder holder) {
-        mCamera = getCameraInstance();
         try {
             mCamera.setPreviewDisplay(holder);
             mCamera.startPreview();
