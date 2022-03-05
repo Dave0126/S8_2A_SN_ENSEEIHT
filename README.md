@@ -5,7 +5,7 @@
 ### 考试占比
 |UE|科目|占比|考核形式|日期|是否结束|
 |:----:|:----:|:----:|:----:|:----:|:----:|
-|UE - Applications concurrentes et communicantes, bases de données|OpenMP|15%|BE|03/03|<ul><li>- [x] </li></ul>|
+|UE - Applications concurrentes et communicantes, bases de données|OpenMP|15%|BE|03/03|<ul><li>- [ x] </li></ul>|
 |-|Application Web|35%|Examen|05/12|<ul><li>- [ ] </li></ul>|
 |-|Projet - Application Web|15%|Projet (Oral)|06/02|<ul><li>- [ ] </li></ul>|
 |-|Bases de Données|20%|Examen|06/03|<ul><li>- [ ] </li></ul>|
@@ -30,3 +30,4 @@
   * CN：如果你是ENSEEIHT的学生，请`不要直接复制任何项目到你自己的作业中`.由于学校有查重系统，你的每一次作业都会与同期和往届的学生比对，一旦认定为抄袭，按0分处理。
   * EN：If you are a student of ENSEEIHT, `Do not copy anything directly into your own homework`. Otherwise, you will be considered `CHEATING`, and you will be dealt with with a score of 0.
   * FR: Si vous êtes étudiant à l'ENSEEIHT, merci de `Ne rien copier directement dans vos devoirs`. Sinon, vous serez considéré comme *« TRICHE »* et vous ne validez pas le cours.
+
