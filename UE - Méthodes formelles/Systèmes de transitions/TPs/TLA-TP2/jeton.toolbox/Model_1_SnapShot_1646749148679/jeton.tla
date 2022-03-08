@@ -23,11 +23,12 @@ TypeInvariant ==
    [] (/\ etat \in [ Processus -> {Hungry,Thinking,Eating} ]
        /\ jeton \in Processus)
 
-ExclMutuelle == [] (\A i,j \in Processus : etat[i] = Eating /\ etat[j] = Eating => i = j)
+ExclMutuelle == 
+    [] (\A i,j \in Processus : etat[i] = Eating /\ etat[j] = Eating => i = j)
 
 VivaciteIndividuelle == \A i \in Processus : [] (etat[i] = Hungry => <> (etat[i] = Eating))
 
-VivaciteGlobale == [] (\E i \in Processus : etat[i] = Hungry => <> (\E j \in Processus : etat[j] = Eating))
+VivaciteGlobale == [] ((\E i \in Processus : etat[i] = Hungry) => <> (\E j \in Processus : etat[j] = Eating))
 
 JetonVaPartout == \A i \in Processus : [] <> (jeton = i)
 
@@ -54,7 +55,7 @@ entrer(i) ==
 sortir(i) ==
   /\ etat[i] = Eating
   /\ etat' = [ etat EXCEPT ![i] = Thinking ]
-  /\ jeton' = (i+1)%N
+  /\ jeton' = (i + 1) % N
 
 bouger(i) ==
   /\ jeton = i

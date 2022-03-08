@@ -27,7 +27,7 @@ ExclMutuelle == [] (\A i,j \in Processus : etat[i] = Eating /\ etat[j] = Eating 
 
 VivaciteIndividuelle == \A i \in Processus : [] (etat[i] = Hungry => <> (etat[i] = Eating))
 
-VivaciteGlobale == [] (\E i \in Processus : etat[i] = Hungry => <> (\E j \in Processus : etat[j] = Eating))
+VivaciteGlobale == [] ((\E i \in Processus : etat[i] = Hungry) => <> (\E j \in Processus : etat[j] = Eating))
 
 JetonVaPartout == \A i \in Processus : [] <> (jeton = i)
 
