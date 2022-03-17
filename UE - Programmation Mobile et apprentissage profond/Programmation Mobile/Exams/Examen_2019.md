@@ -163,10 +163,14 @@ XML文件如下所示：
 
 我们可以用一个叫“margin”的参数选项来设置图片间的距离，例如
 
+<en> We can use a parameter called "margin" to set the distance between images, for example
+
 -  `android:layout_marginLeft="5dp"`
 - `android:layout_marginRight="5dp"` 
 
 分别设置改图片与左右相邻两图片间的间距为5dp。
+
+<en> Set the spacing between the picture and the left and right adjacent pictures to 5dp respectively.
 
 We can use the option named "margin" to config the 
 
@@ -176,7 +180,11 @@ We can use the option named "margin" to config the
 
 我们可以在 `~/res/values/strings.xml` 中配置Layout中各个组件的 `text` 的默认语言。如果我们需要不同语言，则需要在 `res` 文件夹下新建一个 `values_xx` 文件夹。
 
+<en> We can configure the default language of `text` for each component in the Layout in `~/res/values/strings.xml`. If we need a different language, we need to create a `values_xx` folder under the `res` folder.
+
 例如我们想新增对英语的支持，我们可以新建一个叫 `values-en` ，按照原来的 `string.xml` 改写成新语言的版本即可。这样我们就可以支持不同国家的语言。
+
+<en> For example, if we want to add support for English, we can create a new one called `values-en` and rewrite it into the new language version according to the original `string.xml`. This way we can support languages of different countries.
 
 
 
@@ -216,15 +224,17 @@ public void onClick(View v){
 
 要公布应用可以接收哪些隐式 Intent，请在 `manifiests` 中使用 `intent-filter` 元素为每个应用组件声明一个或多个 Intent 过滤器。
 
+<en> To announce which implicit intents your app can receive, declare one or more intent filters for each app component using the `intent-filter` element in `manifiests`.
+
 
 
 ##### <3>
 
 - "Take Picture":
-  1. 使用intent调用系统的相机进行拍照：`MediaStore.ACTION_IMAGE_CAPTURE`
-  2. 自己重新构建一个相机：`MediaRecorder`
+  1. 使用intent调用系统的相机进行拍照 <en> Use the intent to call the system's camera to take pictures： `MediaStore.ACTION_IMAGE_CAPTURE`
+  2. 自己重新构建一个相机 <en> Build a camera activity by yourself：`MediaRecorder`
 - "From Gallery"
-  1. 使用intent调用系统相册：`ACTION_PICK`
+  1. 使用intent调用系统相册 <en> Use intent to call system album：`ACTION_PICK`
 
 
 
@@ -235,24 +245,32 @@ public void onClick(View v){
 这个应用所必须权限有：
 
 1. CAMERA：无论我们使用系统的相机，或者使用我们自己调用摄像头都需要该权限
-2. SENSORS：使用摄像头时需要该权限
-3. STORAGE：需要该权限对存储设备读写，拍照、查找图片等
+2. STORAGE：需要该权限对存储设备读写，拍照、查找图片等
 
 
 
 ##### <2>
 
-根据<1.2.3>中所述的两种方法，我们需要的权限有：
+根据<1.2.3>中所述的第一种方法，我们需要的权限有：
 
 1. CAMERA：需要该权限要用摄像头以拍照
 2. STORAGE：需要该权限对存储设备读写，拍照、查找图片等
+
+第二种方法：
+
+1. STORAGE：需要该权限对存储设备读写，拍照、查找图片等
 
 
 
 ##### <3>
 
 - uses-features：定义该app会用到的硬件或者软件的功能，标签的目的是用来**描述**该app所依赖的硬件和软件的功能有哪些，并不负责向系统去请求权限。
-- permisions：负责向系统请求app所需要的权限。
+
+  <en> Define the hardware or software functions that the app will use. The purpose of the label is to describe the hardware and software functions that the app depends on, and it is not responsible for requesting permissions from the system.
+
+- uses-permisions：负责向系统请求app所需要的权限。
+
+  <en> Responsible for requesting the permissions required by the app from the system
 
 
 
