@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Search by Image</string>
+    <string name="editView_Search">Image to search(e.g. Cat memes)</string>
+    <string name="btn_Search">SEARCH</string>
+    <string name="textView_Recent">Recent querles</string>
+    <string name="btn_Gallery">FROM GALLERY</string>
+    <string name="btn_Take">TAKE PICTURE</string>
+    <string name="btn_Edit">EDIT...</string>
+    <string name="btn_Rotate">ROTATE</string>
+    <string name="btn_Flip">FLIP</string>
+    <string name="btn_Crop">CROP</string>
+    <string name="btn_Final_Search">SEARCH</string>
+</resources>
