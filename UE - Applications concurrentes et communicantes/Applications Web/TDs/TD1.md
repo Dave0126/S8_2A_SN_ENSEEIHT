@@ -120,8 +120,8 @@ public class Serv extends HttpServlet {
     String op = request.getParameter("op"); // nom de parameter
     switch(op) {
       case "associer":
-        request.getAltribute("lp", f.listePersonne(1));
-        request.getAltribute("la", f.listeAdresse(1));
+        request.getAttribute("lp", f.listePersonne(1));
+        request.getAttribute("la", f.listeAdresse(1));
         request.getRequestDispacher("choix.jsp").forward(request, response);
         return ;
         

@@ -1,0 +1,6 @@
+let equal =
+    fun a ->
+        fun b ->
+            if (a = b) then true else false
+
+in (((equal) 2) 3)

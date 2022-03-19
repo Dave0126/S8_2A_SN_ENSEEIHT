@@ -1,0 +1,4 @@
+let pointer = ref 0 in 
+    pointer := !pointer + 1; 
+    
+!pointer
