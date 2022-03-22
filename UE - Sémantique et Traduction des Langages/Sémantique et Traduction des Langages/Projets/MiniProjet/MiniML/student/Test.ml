@@ -80,3 +80,9 @@ let%test _ = ( getType (miniML "../../exemples/exemple-16.mml") = Types.IntegerT
 (* Tests for Boolean Write:  /exemples/exemple-17.mml *)
 let%test _ = ( getValeur (miniML "../../exemples/exemple-17.mml") = (IntegerValue 1) )
 let%test _ = ( getType (miniML "../../exemples/exemple-17.mml") = Types.IntegerType )
+
+(* Tests for ErrorValue:  /exemples/exemple-18.mml *)
+let%test _ = ( getValeur (miniML "../../exemples/exemple-18.mml") = (ErrorValue Semantics.TypeMismatchError) )
+
+(* Tests for ErrorType:  /exemples/exemple-18.mml *)
+let%test _ = ( getType (miniML "../../exemples/exemple-18.mml") = Types.ErrorType )
