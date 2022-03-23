@@ -35,9 +35,7 @@ JetonVaPartout == \A i \in Philos : [] <> (jeton = i)
 ----------------------------------------------------------------
 
 Init ==  \* À changer
-        /\ etat = [i \in 0..N-1 |-> Thinking]
-        /\ jeton \in Philos
-        
+        etat = [i \in 0..N-1 |-> Thinking]
 
 demande(i) ==  \* À changer
                 /\ etat[i] = Thinking

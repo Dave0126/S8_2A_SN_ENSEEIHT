@@ -1,0 +1,47 @@
+@!@!@STARTMSG 2262:0 @!@!@
+TLC2 Version 2.16 of 31 December 2020 (rev: cdddf55)
+@!@!@ENDMSG 2262 @!@!@
+@!@!@STARTMSG 2187:0 @!@!@
+Running breadth-first search Model-Checking with fp 76 and seed 2113000645961899047 with 2 workers on 4 cores with 1182MB heap and 2657MB offheap memory [pid: 940364] (Linux 5.4.0-89-generic amd64, AdoptOpenJDK 14.0.1 x86_64, OffHeapDiskFPSet, DiskStateQueue).
+@!@!@ENDMSG 2187 @!@!@
+@!@!@STARTMSG 2220:0 @!@!@
+Starting SANY...
+@!@!@ENDMSG 2220 @!@!@
+Parsing file /home/gdai/1_S8/S8_2A_SN_ENSEEIHT/UE - Méthodes formelles/Systèmes de transitions/TPs/TLA-TP3/philosophes0.toolbox/Model_1/MC.tla
+Parsing file /home/gdai/1_S8/S8_2A_SN_ENSEEIHT/UE - Méthodes formelles/Systèmes de transitions/TPs/TLA-TP3/philosophes0.toolbox/Model_1/philosophes0.tla
+Parsing file /mnt/n7fs/tla/toolbox-1.7.1/plugins/org.lamport.tlatools_1.0.0.202012311918/tla2sany/StandardModules/TLC.tla
+Parsing file /mnt/n7fs/tla/toolbox-1.7.1/plugins/org.lamport.tlatools_1.0.0.202012311918/tla2sany/StandardModules/Naturals.tla
+Parsing file /mnt/n7fs/tla/toolbox-1.7.1/plugins/org.lamport.tlatools_1.0.0.202012311918/tla2sany/StandardModules/Sequences.tla
+Parsing file /mnt/n7fs/tla/toolbox-1.7.1/plugins/org.lamport.tlatools_1.0.0.202012311918/tla2sany/StandardModules/FiniteSets.tla
+Semantic processing of module Naturals
+Semantic processing of module philosophes0
+Semantic processing of module Sequences
+Semantic processing of module FiniteSets
+Semantic processing of module TLC
+Semantic processing of module MC
+@!@!@STARTMSG 2219:0 @!@!@
+SANY finished.
+@!@!@ENDMSG 2219 @!@!@
+@!@!@STARTMSG 2185:0 @!@!@
+Starting... (2022-03-23 15:44:59)
+@!@!@ENDMSG 2185 @!@!@
+@!@!@STARTMSG 2140:3 @!@!@
+The subscript of the next-state relation specified by the specification
+does not seem to contain the state variable jeton
+@!@!@ENDMSG 2140 @!@!@
+@!@!@STARTMSG 2212:0 @!@!@
+Implied-temporal checking--satisfiability problem has 4 branches.
+@!@!@ENDMSG 2212 @!@!@
+@!@!@STARTMSG 2189:0 @!@!@
+Computing initial states...
+@!@!@ENDMSG 2189 @!@!@
+@!@!@STARTMSG 2102:1 @!@!@
+current state is not a legal state
+While working on the initial state:
+/\ etat = (0 :> "T" @@ 1 :> "T" @@ 2 :> "T" @@ 3 :> "T")
+/\ jeton = null
+
+@!@!@ENDMSG 2102 @!@!@
+@!@!@STARTMSG 2186:0 @!@!@
+Finished in 4972ms at (2022-03-23 15:45:00)
+@!@!@ENDMSG 2186 @!@!@
