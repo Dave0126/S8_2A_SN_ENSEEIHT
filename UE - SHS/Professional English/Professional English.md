@@ -94,3 +94,18 @@ Clement's groupe:
 
 
 
+**Argument:**
+
+The worst movie you've ever seen：
+
+***Shanghai Fortress***  is a Chinese science fiction action film. it was been published in 2019. the film mainly the human race's last stand in Shanghai fighting against aliens who try to seize a hidden energy source on earth in 2042. the film spent 6 years in production, and about ¥400 million yuan (US $57 million) budget, the film raked in just 119 million yuan in its opening weekend.And the actor in this film, Lu Han, his salary was rumoured [/ˈruː.mər/] to be ¥120 million yuan.Buuuuut, about his acting skill ..., Well, whatelse can I say, that's very terrible. it totally make no sense for his high salary. 
+
+
+
+
+
+vitness 速度
+
+velocity
+
+ 
