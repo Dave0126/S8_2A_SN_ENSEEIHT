@@ -2,7 +2,7 @@
 
 ## Mini - Project : MiniML
 
-#### Author
+#### Authors
 
 **EL BSITA Yassir** and **DAI Guohao** in **Group Binome L12 - 14,** 2A - SN.
 
@@ -32,5 +32,8 @@ This is a mini project of UE - Sémantique et Tradution des Langages. It is an i
 
 - `dune build` to build the whole Ocaml project ; 
 - `dune runtest` to build and execute inline test ;
-- `dune utop` to launch the `utop` tool for testing some functions ;
+- `dune utop` to launch the `utop` tool for testing some functions :
+  1. Type `open Tests.MiniML;;` to switch to `miniML` function;
+  2. We can use the test files in folder `/exemples/` as typing `miniML "exemples/exemple-xx.mml";;`;
+  3. The structure of result value is `"Type | Value"`;
 - `dune clean` to clean up the files generated in folder  `/_build/*` .

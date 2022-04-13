@@ -23,7 +23,7 @@ where $A ∈ Var$.
 
 
 
-**Definition (equivalent formulas)**
+###### Definition (equivalent formulas)
 
 Two wffs φ and ψ are equivalent iff for every interpretation $\mathcal{I}$, 
 $$
@@ -32,4 +32,38 @@ $$
 This is denoted by $φ ≡ ψ$
 
 
+
+
+
+##### Exercise
+
+###### 1
+
+$$
+\Sigma = \begin{cases}
+	tr = bus \lor train \\
+	tr = bus \lor car \to late \land miss \\
+	\neg late
+\end{cases} \\
+\phi = t \\
+bus \lor train \triangleq \{ bus \to late, bus \to miss, car \to late, car \to miss\}\\
+\Sigma \models ? \phi
+$$
+
+
+$$
+{\frac{tr = bus \lor train \quad \neg train}{b} R}
+$$
+
+
+2. skolem standard
+
+$$
+\forall x (H(x) \to ((\exist yF(x,y)) \land (\exist z M(x,z))) \rightsquigarrow \begin{aligned} 
+\forall x \exist y \exist z \quad H(x) \to (F(x,y) \land M(x,z))\\
+\forall x \exist y \exist z \quad \neg H(x) \lor (F(x,y) \land M(x,z))\\
+\forall x \exist y \exist z \quad \neg (H(x) \lor F(x,y)) \land (\neg H(x) \lor M(x,z))\\
+\forall x \exist y \exist z \quad \neg (H(x) \lor F(x,f_y(x))) \land (\neg H(x) \lor M(x,f_z(x)))\\
+\forall x \exist y \exist z \quad \neg (H(x_1) \lor F(x,f_y(x_1))) \land (\neg H(x_2) \lor M(x,f_z(x_2))) \end{aligned}
+$$
 
