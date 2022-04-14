@@ -15,7 +15,7 @@
 |UE - Paradigmes émergents de programmation|Programmation Déclarative|50%|BE|05/31|<ul><li>- [ ] </li></ul>|
 |-|Programmation Avancée & Calculabilité|50%|Examen|04/22|<ul><li>- [ ] </li></ul>|
 |UE - Sémantique et traduction des langages|Sémantique et traduction des langages|40%|Examen|05/20|<ul><li>- [ ] </li></ul>|
-|-|MiniProjet: MiniC - Sémantique et traduction des langages|20%|Projet|04/08|<ul><li>- [ ] </li></ul>|
+|-|MiniProjet: MiniC & MiniCaml - Sémantique et traduction des langages|20%|Projet|04/13|<ul><li>- [x] </li></ul>|
 |-|Projet: MiniJava - Sémantique et traduction des langages|40%|Projet|未知|<ul><li>- [ ] </li></ul>|
 |UE Programmation Mobile et apprentissage profond|Programmation mobile|50%|Examen|03/18|<ul><li>- [x] </li></ul>|
 |-|Apprentissage profond|50%|Projet|未知|<ul><li>- [ ] </li></ul>|
