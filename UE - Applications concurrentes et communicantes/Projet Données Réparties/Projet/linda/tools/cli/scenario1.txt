@@ -1,0 +1,5 @@
+tryread [ "test" [ 1 2 ] ]
+write [ "test" ]
+write [ "test" [ 1 2 ] ]
+tryread [ "test" [ 1 2 ] ]
+take [ "test" ]

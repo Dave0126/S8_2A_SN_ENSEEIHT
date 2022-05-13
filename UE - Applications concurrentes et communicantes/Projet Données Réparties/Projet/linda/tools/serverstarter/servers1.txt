@@ -1,0 +1,4 @@
+BasicServer1 localhost:4000 Basic
+BasicServer2 localhost:4002 Basic
+ParallelServer1 127.0.0.1:4003 Parallel
+CacheServer1 127.0.0.1:4004 Cache
