@@ -1,0 +1,15 @@
+test {
+	int v = 1;
+	int *ptr = &v;
+	int b = 3; 
+	*ptr = 2;
+	int t[] = new int[5];
+	t[3] = 4;
+	int test = t[3];
+	if ( t[3] < 5 ) {
+		*ptr = &b;
+	} else {
+		t[2] = 2;
+	}	
+	
+}

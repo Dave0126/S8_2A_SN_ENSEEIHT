@@ -1,0 +1,1 @@
+INDEX VERSION 1.131+/home/yelbsita/Annee_2/semantique_trad/tp3/fr.n7.stl.block/.metadata/.plugins/org.eclipse.jdt.core

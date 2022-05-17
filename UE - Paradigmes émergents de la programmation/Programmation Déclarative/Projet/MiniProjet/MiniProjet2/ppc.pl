@@ -50,8 +50,8 @@ solve_v1(Num, Xs, Ys, B) :-
     % Calculate the solution and backtracks %
     fd_labeling(Xs, [backtracks(B)]),
     fd_labeling(Ys, [backtracks(B)]),
-    % Write results in FILE: tiles01.txt %
-    printsol('tiles01.txt', Xs, Ys, Ts). 
+    % Write results in FILE: solution01.txt %
+    printsol('solution01.txt', Xs, Ys, Ts). 
 
 % Test: %
 % Without redundant constraints: "solve_v1(1,Xs,Ys,B)."         B = 2; %
@@ -122,8 +122,8 @@ solve_v2(Num, Xs, Ys, B) :-
 	% Calculate the solution and backtracks %
 	fd_labeling(Xs, [backtracks(B)]),
 	fd_labeling(Ys, [backtracks(B)]),
-	% Write results in FILE: tiles02.txt %
-	printsol('tiles02.txt',Xs,Ys,Ts).
+	% Write results in FILE: solution02.txt %
+	printsol('solution02.txt',Xs,Ys,Ts).
 
 % Test: %
 % With redundant constraints: "solve_v2(1,Xs,Ys,B)."            B = 0; %
@@ -153,8 +153,8 @@ solve_v3(Num, Xs, Ys, B, Goal, NbSol) :-
     % Calculate the solution and backtracks %
     % Use the labeling with the minmin criterion %
     labeling(Xs, Ys, Goal, minmin, B, NbSol),
-    % Write results in FILE: tiles03.txt %
-    printsol('tiles03.txt',Xs,Ys,Ts).
+    % Write results in FILE: solution03.txt %
+    printsol('solution03.txt',Xs,Ys,Ts).
 
 % Test: %
 % "solve_v3(1,Xs,Ys,B,(assign/indomain),NbSol)." : %
@@ -173,7 +173,7 @@ solve_v3(Num, Xs, Ys, B, Goal, NbSol) :-
 
 
 %************************* 4. Symétriesde ****************************%
-
+% *** 4.1 Breaking Symmetry by Sequential Coordinates *** %
 sort([_], [_], [_]).
 sort([X,Xi|Xs], [Y,Yi|Ys], [T,Ti|Ts]) :-
     (Ti #\= T) 
@@ -185,9 +185,9 @@ sort([X,Xi|Xs], [Y,Yi|Ys], [T,Ti|Ts]) :-
 
 % Test command : %
 %   ['ppc.pl']. %
-%   solve_v4(1,Xs,Ys, B). %
+%   solve_v4_1(1, Xs, Ys, B, STRATEGY, NbSol). %
 %   a %
-solve_v4(Num, Xs, Ys, B, Goal, NbSol) :- 
+solve_v4_1(Num, Xs, Ys, B, Goal, NbSol) :- 
     % Get data from FILE: libtp2.pl %
 	data(Num, T, Ts),
 	%%
@@ -206,16 +206,63 @@ solve_v4(Num, Xs, Ys, B, Goal, NbSol) :-
     % Calculate the solution and backtracks %
     % Use the labeling with the minmin criterion %
     labeling(Xs, Ys, Goal, minmin, B, NbSol),
-    % Write results in FILE: tiles04.txt %
-    printsol('tiles04.txt',Xs,Ys,Ts).
+    % Write results in FILE: solution04.txt %
+    printsol('solution04_1.txt',Xs,Ys,Ts).
 
 % Test: %
 % Instance 1 : %
 %    Without   Sort : "solve_v3(1, Xs, Ys, B, assign, NbSol)."         B = 479 |   NbSol = 480     %
-%       With   Sort : "solve_v4(1, Xs, Ys, B, assign, NbSol)."         B = 9   |   NbSol = 4       %
-
+%       With   Sort : "solve_v4_1(1, Xs, Ys, B, assign, NbSol)."       B = 9   |   NbSol = 4       %
 
 % Strategy: assign % 
-%   "solve_v4(1,Xs,Ys,B,assign,NbSol)." : %
+%   "solve_v4_1(1,Xs,Ys,B,assign,NbSol)." : %
 %       Instance 1      |   B = 9           |   NbSol = 4 %
 %       Instance 2      |   B = 29902       |   NbSol = 10216 %
+
+
+% *** 4.2 Breaks geometric symmetry by constraining the center position of the largest square *** %
+center_position_largest_square([], [], [], _).
+center_position_largest_square([X|Xs], [Y|Ys], [T|Ts], Side) :-
+    L_2 is div(T,2),
+    S_2 is div(Side,2),
+    (       X + L_2 #=< S_2
+        #/\ Y + L_2 #=< S_2).
+
+% Test command : %
+%   ['ppc.pl']. %
+%   solve_v4_2(1, Xs, Ys, B, assign, NbSol).%
+%   a %
+solve_v4_2(Num, Xs, Ys, B, Goal, NbSol) :- 
+    % Get data from FILE: libtp2.pl %
+    data(Num, T, Ts),
+    %%
+    length(Ts, Len),
+    length(Xs, Len),
+    length(Ys, Len),
+    % The domains of the variables in the lists Xs and Ys %
+    coordinate_domain(Xs, T, Ts),
+    coordinate_domain(Ys, T, Ts),
+    % Breaks geometric symmetry by constraining the center position of the largest square %
+    center_position_largest_square(Xs, Ys, Ts, T),
+    % Constraint Predicates of non-overlapping %
+    chevauchement(Xs, Ys, Ts),
+    % Redundant constraints %
+    redundant_constraint(T, 0, Xs, Ts),
+    redundant_constraint(T, 0, Ys, Ts),
+    sort(Xs, Ys, Ts),
+    % Calculate the solution and backtracks %
+    % Use the labeling with the minmin criterion %
+    labeling(Xs, Ys, Goal, minmin, B, NbSol),
+    % Write results in FILE: solution04.txt %
+    printsol('solution04_2.txt',Xs,Ys,Ts).
+
+% Test: %
+% Instance 1 : %
+%    Without   Sort                     : "solve_v3(1, Xs, Ys, B, assign, NbSol)."         B = 479 |   NbSol = 480     %
+%       With   Sort                     : "solve_v4_1(1, Xs, Ys, B, assign, NbSol)."       B = 9   |   NbSol = 4       %
+%       With   Sort (center position)   : "solve_v4_2(1, Xs, Ys, B, assign, NbSol)."       B = 2   |   NbSol = 1       %
+
+% Strategy: assign % 
+%   "solve_v4_2(1,Xs,Ys,B,assign,NbSol)." : %
+%       Instance 1      |   B = 2           |   NbSol = 1 %
+%       Instance 2      |   B = 57          |   NbSol = 1 %
