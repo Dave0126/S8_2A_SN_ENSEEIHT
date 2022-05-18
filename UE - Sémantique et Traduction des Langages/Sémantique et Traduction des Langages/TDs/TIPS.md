@@ -114,3 +114,31 @@ ruleIf env econd bthen belse mem =
 
 #### `TAM`
 
+```java
+int i = 6;
+```
+
+```assembly
+PUSH 1							/* 1. 规划用以操作变量的内存空间 */
+LOADL 6							/* 2. 给变量赋值 */
+STORE (1) 0[SB]			/* 3. 将(1)个变量存进地址0[SB]中 */
+```
+
+```java
+int y = i + 1;
+```
+
+```assembly
+PUSH 2							/* 1. 规划用以操作变量的内存空间 */
+LOADL 1							/* 2. 加载其中一个操作数 */
+LOAD (1) 0[SB]			/* 3. 从地址0[SB]中加载另一个操作数i */
+SUBR IAdd						/* 4. 调用原语 IAdd */
+STORE (1) 1[SB]			/* 5. 将得到的(1)个结果存到地址1[SB]中 */
+```
+
+
+
+1. 在 `Declaration` 中，我们需要检查每一个 `Expression` 中的成员变量，如`name, type, parameter` 等是否在 `TDS` 中存在。以下是 `TDS` 中的方法：
+   - `boolean tds.contains(String name)`：检查在该 `Declaration` 对象中的 `name` 属性是否在 `tds` 中存在
+   - `boolean tds.accepts(TDS tds)`：检查在该 `Declaration` 对象是否可以注册到 `tds` 中
+   - `void tds.register(TDS tds)`：注册该 `Declaration` 对象
