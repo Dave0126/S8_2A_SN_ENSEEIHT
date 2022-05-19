@@ -141,3 +141,59 @@ il est fier que le public applaudisse.
 7. il foudrais que tu bois peu de cafe
 
    il foudrait que tu bois moin de cafe
+
+---
+
+#### Dialogue
+
+*<u>Sujet</u>*: Vous proposez à un ami français de partir en week-end. Il n’a pas envie de bouger et vous propose de partir avec un autre ami. Vous lui expliquez pourquoi c’est très important pour vous d’y aller avec lui et tentez de le motiver.
+
+*<u>Deux rôles</u>*: les deux amis.
+
+> `Guohao`: Salut, Ying! Tu t’en sorte? 
+
+`Ying`: Hi Guohao. Ça va, merci. Je suis tellement fatiguée, je viens de passer un examen.
+
+> `Guohao`: AH Ouais? Qu'est-ce qui se passe? Ça roule?
+
+`Ying`: Je l’espère. J'ai préparé l'examen pendant une semaine. Je n'ai pas bien dormi ces jours.
+
+> `Guohao`: Incroyable! C’est trop. J’espère que tu auras une bonne note car tu travailles si dur.
+
+`Ying`: Merci.
+
+> `Guohao`: Alors, tu seras disponible pour le weekend? On fera un pique-nique au bord de la Garonne le samedi ou dimanche soir. Des amis ne se sont pas vus depuis longtemps, certains vont venir de Paris et de Marseille en train. Nous aimerions ta présence.
+
+`Ying`: Merci pour ton invitation. MAIS… Je préfère bien me reposer le week-end parce que je suis vraiment fatiguée ces derniers temps… Je suis désolé.
+
+> `Guohao`: T'inquiète pas, tu n'as pas besoin d'être stressé. Cependant, A mon avis, c'est une bonne activité de détente. Nous achèterons de la nourriture et des boissons à emporter. Nous nous assoirons, mangerons et discuterons ensemble. Bien sûr, nous choisirons le bonne moment quand le soleil est sur le point de se coucher. Il ne fera pas trop chaud. De plus, le coucher de soleil au bord de la Garonne est toujours vraiment magnifique. Surtout, tu manques à tes amis. Certains qui ont terminé les études vont rentrer en Chine. Bref, on aimerait que tu viennes.
+
+`Ying`: emm…..
+
+> `Guohao`: Allez Allez Allez
+
+`Ying`: D'accord. Je vais venir.
+
+> `Guohao`: Super! je t'appellerai demain pour les détails. A bientot!
+
+`Ying`: Ciao.
+
+
+
+
+
+
+
+#### May 19
+
+Comment est-ce que je peux vous aider? = Coment puis-je vous aider? = Je peux vous aider comment?
+
+desespere
+
+pour 用于将来时
+
+ce n'est pas la pain de ... = 
+
+conseil / service / 
+
+vous (pronom) avez ...

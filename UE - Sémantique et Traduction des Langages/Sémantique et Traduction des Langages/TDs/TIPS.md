@@ -114,6 +114,8 @@ ruleIf env econd bthen belse mem =
 
 #### `TAM`
 
+详见 [TD7: La machine TAM]()
+
 ```java
 int i = 6;
 ```
@@ -138,7 +140,87 @@ STORE (1) 1[SB]			/* 5. 将得到的(1)个结果存到地址1[SB]中 */
 
 
 
+#### `TDS` (参考 Projet)
+
+##### `collectAndBackwardResolve(TDS tds)`
+
+> 继承语义的属性以收集所有标识符声明并检查声明是否允许。
+>
+> `Inherited Semantics attribute to collect all the identifiers declaration and check the declaration are allowed.`
+
 1. 在 `Declaration` 中，我们需要检查每一个 `Expression` 中的成员变量，如`name, type, parameter` 等是否在 `TDS` 中存在。以下是 `TDS` 中的方法：
+
    - `boolean tds.contains(String name)`：检查在该 `Declaration` 对象中的 `name` 属性是否在 `tds` 中存在
    - `boolean tds.accepts(TDS tds)`：检查在该 `Declaration` 对象是否可以注册到 `tds` 中
-   - `void tds.register(TDS tds)`：注册该 `Declaration` 对象
+   - `void tds.register(TDS tds)`：在 `tds` 中注册该 `Declaration` 对象
+
+   例 `VariableDeclaration varDec implements Declaration, Instruction`
+
+   ```java
+   public VariableDeclaration(String name, Type type, Expression expr);
+   public boolean collectAndBackwardResolve(TDS tds) {
+   		boolean tds_nameIsContrain = tds.contains(this.name);
+   		boolean tds_expr = this.expr.collectAndBackwardResolve(tds);
+   		Declaration varDec = new VariableDeclaration(this.name,this.type,this.expr);
+   		boolean tds_isAccepted = tds.accepts(varDec);
+   		if (tds_nameIsContrain) {
+   			Logger.error("Name is existed. ");
+   			return false;
+   		} else if (tds_isAccepted) {
+   			tds.register(varDec);
+   			tds_nameIsContrain = true;
+   		} else {
+   			return false;
+   		}
+   		return tds_nameIsContrain && tds_expr && tds_isAccepted;
+   	}
+   ```
+
+2. 在 `Instruction` 中，我们只需要自顶向下、递归地调用 `Instruction` 中成员的 `collectAndBackwardResolve()` 方法
+
+   例 `Condition c implements Instrution`
+
+   ```java
+   public Condition (Expression condition, Block thenBranch, Block elseBranch);
+   public boolean collectAndBackwardResolve(TDS tds) {
+     	boolean tds_ok = this.condition.collectAndBackwardResolve(tds);
+   		tds_ok = tds_ok && this.thenBranch.collectAndBackwardResolve(tds);
+   		if (elseBranch != null) {
+   			tds_ok = tds_ok && this.elseBranch.collectAndBackwardResolve(tds);
+   		}
+   		return tds_ok;
+   	}
+   ```
+
+
+
+##### `fullResolve(TDS tds)`
+
+> 继承语义属性以检查所有标识符是否已定义并将所有标识符使用与其定义相关联。
+>
+> `Inherited Semantics attribute to check that all identifiers have been defined and associate all identifiers uses with their definitions.`
+
+
+
+
+
+#### `Type`
+
+1. 根据 LL(1) 型文法规划结构，画出类图
+   $$
+   \begin{aligned}
+   & 1. \qquad S \to B \\
+   & 2. \qquad B \to \{LI\} \\
+   & 3. \qquad LI \to I \; LI \\
+   & 4. \qquad LI \to \Lambda \\
+   & 5. \qquad I \to const \; T \; id=V \\
+   & 6. \qquad I \to \quad ... \\
+   & 7. \qquad T \to int \\
+   & 8. \qquad T \to \quad ... \\
+   & 9. \qquad E \to \quad ... \\
+   \end{aligned}
+   $$
+
+   - $\# 5 \quad \{I.ast \to new\; Instruction(const.txt,\; T.ast, \; LI.ast) \}$
+
+   
