@@ -33,12 +33,13 @@ let bottom = (false, false)
                        * lattice has infinite ascending chains and you want
                        * your analyses to terminate. *)
  
- let sem_itv a b = assert false(* semantic interval: intervalle entre a et b*)
- (*  if (a < b) then top else 
+ (***TODO*)                      
+ let sem_itv a b = (* semantic interval: intervalle entre a et b*)
+   if (a < b) then top else 
      if ((a = b) && (a mod 2 = 0)) then (true, false) else 
       if ((a = b) && (a mod 2 = 1)) then (false, true) else
        bottom
- *)
+ 
  let sem_plus (xp, xi) (yp, yi) = 
    (xp && yp) || (xi && yi), (xp && yi) || (xi && yp)
  
