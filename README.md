@@ -18,7 +18,7 @@
 |-|MiniProjet: MiniC & MiniCaml - Sémantique et traduction des langages|20%|Projet|04/13|<ul><li>- [x] </li></ul>|
 |-|Projet: MiniJava - Sémantique et traduction des langages|40%|Projet|未知|<ul><li>- [ ] </li></ul>|
 |UE Programmation Mobile et apprentissage profond|Programmation mobile|50%|Examen|03/18|<ul><li>- [x] </li></ul>|
-|-|Apprentissage profond|50%|Projet|未知|<ul><li>- [ ] </li></ul>|
+|-|Apprentissage profond|50%|Projet|未知|<ul><li>- [x] </li></ul>|
 
 ### INTRODUCTION
 这个仓库里的内容均为*Département Sciences du Numérique - E.N.S.E.E.I.H.T.* 2021~2022学年-第2学期的教学资料，其中包括所有科目的**Cours**、**TD**、**TP**、**Projet**以及**Examen**的Sujet、Slide、Source Code以及我个人的Rapport和部分笔记。希望能对你有所帮助。

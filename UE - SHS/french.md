@@ -197,3 +197,28 @@ ce n'est pas la pain de ... =
 conseil / service / 
 
 vous (pronom) avez ...
+
+voiture - bagnole - caisse
+
+livre - bouquin
+
+travaille - boulot
+
+manger - bouffer
+
+je suis rassesie - I am full
+
+se marrier - rigoler
+
+rigolo - marrant
+
+SDF - Sans Domicile Fixe
+
+un non voyant - aveugle
+
+
+
+A queele heure tu viens demain
+
+Tu as eu l'infomation - TaU1l'info
+
