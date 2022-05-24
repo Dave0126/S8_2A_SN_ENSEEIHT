@@ -6,10 +6,17 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch CheckingOverflowBV",
+            "request": "launch",
+            "mainClass": "fr.n7.smt.CheckingOverflowBV",
+            "projectName": "labSMT_7a73740"
+        },
+        {
+            "type": "java",
             "name": "Launch Current File",
             "request": "launch",
             "mainClass": "${file}",
-            "vmArgs": "-Djava.library.path=/Users/dave/Downloads/z3-4.8.7-x64-osx-10.14.6/bin"
+            "vmArgs": "-Djava.library.path=~/Downloads/z3-4.8.7-x64-ubuntu-16.04/bin/"
         },
         {
             "type": "java",
@@ -17,7 +24,7 @@
             "request": "launch",
             "mainClass": "fr.n7.smt.CheckingOverflowBV",
             "projectName": "labSMT_8bb76f69",
-            "vmArgs": "-Djava.library.path=/Users/dave/Downloads/z3-4.8.7-x64-osx-10.14.6/bin"
+            "vmArgs": "-Djava.library.path=~/Downloads/z3-4.8.7-x64-ubuntu-16.04/bin/"
         },
         {
             "type": "java",
@@ -25,7 +32,7 @@
             "request": "launch",
             "mainClass": "fr.n7.smt.SimpleArrayProblem",
             "projectName": "labSMT_8bb76f69",
-            "vmArgs": "-Djava.library.path=/Users/dave/Downloads/z3-4.8.7-x64-osx-10.14.6/bin"
+            "vmArgs": "-Djava.library.path=~/Downloads/z3-4.8.7-x64-ubuntu-16.04/bin/"
         },
         {
             "type": "java",
@@ -33,7 +40,7 @@
             "request": "launch",
             "mainClass": "fr.n7.smt.SimpleBVProblem",
             "projectName": "labSMT_8bb76f69",
-            "vmArgs": "-Djava.library.path=/Users/dave/Downloads/z3-4.8.7-x64-osx-10.14.6/bin"
+            "vmArgs": "-Djava.library.path=~/Downloads/z3-4.8.7-x64-ubuntu-16.04/bin/"
         },
         {
             "type": "java",
@@ -41,7 +48,7 @@
             "request": "launch",
             "mainClass": "fr.n7.smt.SimpleIntegerProblem",
             "projectName": "labSMT_8bb76f69",
-            "vmArgs": "-Djava.library.path=/Users/dave/Downloads/z3-4.8.7-x64-osx-10.14.6/bin"
+            "vmArgs": "-Djava.library.path=~/Downloads/z3-4.8.7-x64-ubuntu-16.04/bin/"
         }
     ]
 }

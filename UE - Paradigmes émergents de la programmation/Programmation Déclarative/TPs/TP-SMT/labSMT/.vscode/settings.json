@@ -1,5 +1,6 @@
 {
     "java.project.referencedLibraries": [
-        "/Users/dave/Downloads/z3-4.8.7-x64-osx-10.14.6/bin/com.microsoft.z3.jar"
+        "/Users/dave/Downloads/z3-4.8.7-x64-osx-10.14.6/bin/com.microsoft.z3.jar",
+        "/home/gdai/Downloads/z3-4.8.7-x64-ubuntu-16.04/bin/com.microsoft.z3.jar"
     ]
 }
