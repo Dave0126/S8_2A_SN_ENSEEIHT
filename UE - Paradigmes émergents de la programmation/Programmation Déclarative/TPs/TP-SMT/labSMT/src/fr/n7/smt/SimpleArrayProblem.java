@@ -107,8 +107,6 @@ class SimpleArrayProblem {
             System.out.println("  - value of my_array_v_up2[j]: " + m.getConstInterp(my_array_v_up2_bv_j));
         } else {
             System.out.println("  UNSAT or UNKNOWN problem!");
-        }        solver.check();
-
-
+        }
     }
 }
