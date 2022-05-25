@@ -6,16 +6,21 @@ let bottom = (false, false, false)
 
 (* a printing function (useful for debuging), *)
 let fprint ff  = function
-  | bottom -> Format.fprintf ff "⊥"
-  | top -> Format.fprintf ff "T"
-  | Val i -> Format.fprintf ff "%d" i
+  | (false, false, false) -> Format.fprintf ff "⊥"
+  | (true, true, true) -> Format.fprintf ff "T"
 
 (* the order of the lattice. *)
-let order x1 y1 = match x1, y1 with
-  | bottom, _ -> true
-  | _, top -> true
-  | Val x, Val y -> x=y
-  | _ -> false
+let order x y = match x, y with
+  | (xn, xe, xp), (yn, ye, yp) -> if xn then (not yn)
+else (if xe then ye || yp else (not yp))
+
+
+(*
+(xn, xe, xp), (yn, ye, yp) -> if xn then (match sem_minus x y with
+                                              | (n, e, p) -> n)
+else (if xe then ye || yp else (match sem_minus y x with
+                                | (n, e, p) -> p))
+   *)
 
 (* All the functions below are safe overapproximations.
  * You can keep them as this in a first implementation,
@@ -23,26 +28,29 @@ let order x1 y1 = match x1, y1 with
  * the precision of your analyses. *)
 
 let join x y = match x, y with
-  | bot, _ -> y
-  | _, bot -> x
-  | _, top -> top
-  | top, _ -> top
-  | Val i, Val j -> if i==j then Val i else Top
+  | (xn, xe, xp), (yn, ye, yp) -> (xn || yn, xe || ye, xp || yp)
 
 let meet x y = match x, y with
-  | Bot, _ -> Bot
-  | _, Bot -> Bot
-  | _, Top -> x
-  | Top, _ -> y
-  | Val i, Val j -> if i==j then Val i else Bot
+  | (xn, xe, xp), (yn, ye, yp) -> (xn && yn, xe && ye, xp && yp)
 
 let widening x y = join x y  (* Ok, maybe you'll need to implement this one if your
                       * lattice has infinite ascending chains and you want
                       * your analyses to terminate. *)
 
-let sem_itv a b =
-  if a > b then Bot else 
-    if a == b then Val a else Top
+let sem_itv x y = match x with
+  | (xn, xe, xp) -> if xn then (match y with
+    | (true, _, _) -> (true, false, false)
+    | (_, true, _) -> (true, true, false)
+    | (_, _, true) -> (true, true, true)
+    ) else if xe then (match y with
+      | (true, _, _) -> (false, false, false)
+      | (_, true, _) -> (false, true, false)
+      | (_, _, true) -> (false, true, true)
+) else if xp then (match y with
+  | (true, _, _) -> (false, false, false)
+  | (_, true, _) -> (false, false, false)
+  | (_, _, true) -> (false, false, true)
+) else (false, false, false)
 
 
 let sem_plus (n1, z1, p1) (n2, z2, p2) =
@@ -68,9 +76,8 @@ let sem_div (n1, z1, p1) (n2, z2, p2) =
   )
 
 let sem_guard t = match t with
-  | Bot -> Bot
-  | Top -> Top
-  | Val i -> if i > 0 then Val i else Bot
+  | (false, false, false) -> (false, false, false)
+  | (true, true, true) -> (true, true, true)
 
 let backsem_plus x y r = x, y
 let backsem_minus x y r = x, y

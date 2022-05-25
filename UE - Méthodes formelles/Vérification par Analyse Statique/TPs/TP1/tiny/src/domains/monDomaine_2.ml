@@ -6,53 +6,51 @@
 
  (* a printing function (useful for debuging), *)
  let fprint ff x = match x with
-   | (true,true) -> Format.fprintf ff "T"
-   | (true,false) -> Format.fprintf ff "pair"
-   | (false,true) -> Format.fprintf ff "impair"
-   | (false,false) -> Format.fprintf ff "⊥"
+   | (true,true) -> Format.printf ff ""
+   | (true,false) -> Format.printf ff "pair"
+   | (false,true) -> Format.printf ff "impair"
+   | (false,false) -> Format.printf ff ""
+ 
  (* the order of the lattice. *)
  let order (x_p, x_i) (y_p, y_i) = (y_p || (not x_p) && y_i || (not x_i)) 
  (* and infimums of the lattice. *)
-
- let top = (true, true)
-let bottom = (false, false)
-
+ let top = ()
+ let bottom = ()
+ 
  (* All the functions below are safe overapproximations.
   * You can keep them as this in a first implementation,
   * then refine them only when you need it to improve
   * the precision of your analyses. *)
  
  let join (x_p, x_i) (y_p, y_i) = 
-  (x_p || y_p), (x_i || y_i)
+  (x_p || y_p , x_i || y_i)
 
- 
- let meet (x_p, x_i) (y_p, y_i) =
- (x_p && y_p), (x_i && y_i)
- 
+
+ let meet (x_p, x_i) (y_p, y_i) = 
+  (x_p && y_p , x_i && y_i)
+
  let widening x y = join x y  (* Ok, maybe you'll need to implement this one if your
                        * lattice has infinite ascending chains and you want
                        * your analyses to terminate. *)
  
- (***TODO*)                      
- let sem_itv a b = (* semantic interval: intervalle entre a et b*)
-   if (a < b) then top else 
-     if ((a = b) && (a mod 2 = 0)) then (true, false) else 
-      if ((a = b) && (a mod 2 = 1)) then (false, true) else
-       bottom
+ let sem_plus (x_p, x_i) (y_p, y_i) = 
+  (x_p && y_p)||(x_i && y_i), (x_p && y_i)||(x_i && y_p)
  
- let sem_plus (xp, xi) (yp, yi) = 
-   (xp && yp) || (xi && yi), (xp && yi) || (xi && yp)
+ let sem_minus (x_p, x_i) (y_p, y_i) = 
+  (x_p && y_p)||(x_i && y_i), (x_p && y_i)||(x_i && y_p)
  
- let sem_minus (xp, xi) (yp, yi) = 
-  (xp && yp) || (xi && yi), (xp && yi) || (xi && yp)
+ let sem_times (x_p, x_i) (y_p, y_i) = 
+  ((x_p && (y_p || y_i)) || (y_p && (x_i || x_p))),
+  (x_i && y_i)
  
- let sem_times (xp, xi) (yp, yi) = 
-  (xp && yp) || (xp && yi) || (xi && yp), (xi && yi)
+ let sem_div (x_p, x_i) (y_p, y_i) = 
+  ((x_p && (y_p || y_i)) || (y_p && (x_i || x_p))),
+  (x_i && y_i)
  
- let sem_div (xp, xi) (yp, yi) = 
-  top
- 
- let sem_guard t = t
+ let sem_guard t = match t with
+   | Bot -> Bot
+   | Top -> Top
+   | Val i -> if i > 0 then Val i else Bot
  
  let backsem_plus x y r = x, y
  let backsem_minus x y r = x, y

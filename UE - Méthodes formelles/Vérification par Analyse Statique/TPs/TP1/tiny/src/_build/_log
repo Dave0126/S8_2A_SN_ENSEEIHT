@@ -41,10 +41,17 @@
 /applications/opam/ocaml-base-compiler/bin/ocamlopt.opt -c -I domains -o name.cmx name.ml # cached
 # Target: ast.cmx, tags: { compile, extension:cmx, extension:ml, file:ast.cmx, file:ast.ml, implem, native, ocaml, quiet, traverse }
 /applications/opam/ocaml-base-compiler/bin/ocamlopt.opt -c -I domains -o ast.cmx ast.ml # cached
-# Target: domains/monDomaine_2.ml.depends, tags: { extension:ml, file:domains/monDomaine_2.ml, ocaml, ocamldep, quiet, traverse }
-/applications/opam/ocaml-base-compiler/bin/ocamldep.opt -modules domains/monDomaine_2.ml > domains/monDomaine_2.ml.depends
-# Target: domains/monDomaine_2.cmo, tags: { byte, compile, extension:cmo, extension:ml, file:domains/monDomaine_2.cmo, file:domains/monDomaine_2.ml, implem, ocaml, quiet, traverse }
-/applications/opam/ocaml-base-compiler/bin/ocamlc.opt -c -I domains -o domains/monDomaine_2.cmo domains/monDomaine_2.ml
+# Target: domains/monDomaineTP2.ml.depends, tags: { extension:ml, file:domains/monDomaineTP2.ml, ocaml, ocamldep, quiet, traverse }
+/applications/opam/ocaml-base-compiler/bin/ocamldep.opt -modules domains/monDomaineTP2.ml > domains/monDomaineTP2.ml.depends
+# Target: domains/monDomaineTP2.cmo, tags: { byte, compile, extension:cmo, extension:ml, file:domains/monDomaineTP2.cmo, file:domains/monDomaineTP2.ml, implem, ocaml, quiet, traverse }
+/applications/opam/ocaml-base-compiler/bin/ocamlc.opt -c -I domains -o domains/monDomaineTP2.cmo domains/monDomaineTP2.ml
++ /applications/opam/ocaml-base-compiler/bin/ocamlc.opt -c -I domains -o domains/monDomaineTP2.cmo domains/monDomaineTP2.ml
+File "domains/monDomaineTP2.ml", lines 44-45, characters 15-73:
+44 | ...............match x, y with
+45 |   |Itv (n1, n2), Itv (n3, n4) -> mk_itv (max_pinf n1 n3) (min_minf n2 n4)
+Warning 8 [partial-match]: this pattern-matching is not exhaustive.
+Here is an example of a case that is not matched:
+(Itv (_, _), Bot)
 # Target: nonRelational.ml.depends, tags: { extension:ml, file:nonRelational.ml, ocaml, ocamldep, quiet, traverse }
 /applications/opam/ocaml-base-compiler/bin/ocamldep.opt -modules nonRelational.ml > nonRelational.ml.depends # cached
 # Target: nonRelational.mli.depends, tags: { extension:mli, file:nonRelational.mli, ocaml, ocamldep, quiet, traverse }
@@ -105,8 +112,15 @@
 /applications/opam/ocaml-base-compiler/bin/ocamlc.opt -c -I domains -o printResults.cmi printResults.mli # cached
 # Target: printResults.cmx, tags: { compile, extension:cmx, extension:ml, file:printResults.cmx, file:printResults.ml, implem, native, ocaml, quiet, traverse }
 /applications/opam/ocaml-base-compiler/bin/ocamlopt.opt -c -I domains -o printResults.cmx printResults.ml # cached
-# Target: domains/monDomaine_2.cmx, tags: { compile, extension:cmx, extension:ml, file:domains/monDomaine_2.cmx, file:domains/monDomaine_2.ml, implem, native, ocaml, quiet, traverse }
-/applications/opam/ocaml-base-compiler/bin/ocamlopt.opt -c -I domains -o domains/monDomaine_2.cmx domains/monDomaine_2.ml
+# Target: domains/monDomaineTP2.cmx, tags: { compile, extension:cmx, extension:ml, file:domains/monDomaineTP2.cmx, file:domains/monDomaineTP2.ml, implem, native, ocaml, quiet, traverse }
+/applications/opam/ocaml-base-compiler/bin/ocamlopt.opt -c -I domains -o domains/monDomaineTP2.cmx domains/monDomaineTP2.ml
++ /applications/opam/ocaml-base-compiler/bin/ocamlopt.opt -c -I domains -o domains/monDomaineTP2.cmx domains/monDomaineTP2.ml
+File "domains/monDomaineTP2.ml", lines 44-45, characters 15-73:
+44 | ...............match x, y with
+45 |   |Itv (n1, n2), Itv (n3, n4) -> mk_itv (max_pinf n1 n3) (min_minf n2 n4)
+Warning 8 [partial-match]: this pattern-matching is not exhaustive.
+Here is an example of a case that is not matched:
+(Itv (_, _), Bot)
 # Target: compile.ml.depends, tags: { extension:ml, file:compile.ml, ocaml, ocamldep, quiet, traverse }
 /applications/opam/ocaml-base-compiler/bin/ocamldep.opt -modules compile.ml > compile.ml.depends # cached
 # Target: compile.cmx, tags: { compile, extension:cmx, extension:ml, file:compile.cmx, file:compile.ml, implem, native, ocaml, quiet, traverse }
@@ -116,5 +130,5 @@
 # Target: main.cmx, tags: { compile, extension:cmx, extension:ml, file:main.cmx, file:main.ml, implem, native, ocaml, quiet, traverse }
 /applications/opam/ocaml-base-compiler/bin/ocamlopt.opt -c -I domains -o main.cmx main.ml
 # Target: main.native, tags: { dont_link_with, extension:native, file:main.native, link, native, ocaml, program, quiet, traverse, use_apron, use_box, use_gmp, use_oct, use_polka }
-/applications/opam/ocaml-base-compiler/bin/ocamlopt.opt -I domains location.cmx name.cmx ast.cmx domains/monDomaine_2.cmx parser.cmx lexer.cmx relational.cmx report.cmx nonRelational.cmx utils.cmx parse.cmx printResults.cmx analyze.cmx compile.cmx main.cmx -o main.native
+/applications/opam/ocaml-base-compiler/bin/ocamlopt.opt -I domains location.cmx name.cmx ast.cmx domains/monDomaineTP2.cmx parser.cmx lexer.cmx relational.cmx report.cmx nonRelational.cmx utils.cmx parse.cmx printResults.cmx analyze.cmx compile.cmx main.cmx -o main.native
 # Compilation successful.
