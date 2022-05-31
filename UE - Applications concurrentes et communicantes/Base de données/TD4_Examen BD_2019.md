@@ -1,6 +1,8 @@
 ## Examen de BD_2019
 
-##### Liste des attributes
+##### Liste des attributes (1NF)
+
+审题，写出所有的<u>不可分割</u>的基本属性
 
 ```c
 Relation{
@@ -25,7 +27,9 @@ ORDER BY numero_autre_point
 
 
 
-##### Liste des DFs
+##### Liste des DFs (2NF)
+
+第二范式是在第一范式的基础上，消除<u>非主属性</u>对于<u>主属性</u>的<u>部分函数依赖</u>
 
 - (a) `GPS_symbole` $\quad \to \quad$ `value_symbole`
 - (b) `GPS_lieux` $\quad \to \quad$ `nom_lieux, description_lieux, telephone_lieux`

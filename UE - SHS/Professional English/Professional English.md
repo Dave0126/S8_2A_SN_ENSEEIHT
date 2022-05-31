@@ -108,4 +108,31 @@ vitness 速度
 
 velocity
 
- 
+
+
+##### Scientific Presentation: Yassir & Jose
+
+ Algo of admission process
+
+- more efficency
+- less stress for students and schools
+
+equity, non-manipulable, efficiency
+
+`Gale-Shapley algo`:
+
+`Admission Post BAC(APB)`: 24 / 1:
+
+- frist type: order by mark
+- 2nd type: position, location, mark etc.
+
+`parcoursup` : 10 / 1
+
+- not only sorted by mark
+
+
+
+##### Scientific Presentation: Noe&Mahmoud
+
+Theme: 5G 
+

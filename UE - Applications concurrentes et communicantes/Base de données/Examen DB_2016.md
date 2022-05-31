@@ -30,7 +30,7 @@ $\mathcal{R}_{elation}$ :
 - `prenom_joueur`
 - `nationality_joueur`
 - `address_internet_joueur`
-- <other info> : `address_postal`, `numero_de_tele`
+- `address_postal`, `numero_de_tele`
 - `final_date_d_echeance`
 - `date_de_paiement`
 - `point_joueur`
@@ -59,7 +59,7 @@ $\mathcal{R}_{elation}$ :
 
 
 
-##### Decamp. au FNBC（2-范式）
+##### Decamp. au FNBC（BC-范式）
 
 $\mathcal{R}$ + 
 

@@ -51,7 +51,7 @@ Relation{
 
 
 
-#### Decamp. au FNBC（2-范式）
+#### Decamp. au FNBC（3-范式）
 
 - `Adherent([numero_adherent], nom_adherent, prenom_adherent, address_adherent, date_adherent, tarif_cotisation)`
 - `Tarif([tarif_cotisation], montant_cotisation)`
