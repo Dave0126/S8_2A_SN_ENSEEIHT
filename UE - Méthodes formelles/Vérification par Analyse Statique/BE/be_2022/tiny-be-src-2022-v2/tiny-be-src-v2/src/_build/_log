@@ -1,0 +1,102 @@
+### Starting build.
+# Target: check.ml.depends, tags: { extension:ml, file:check.ml, ocaml, ocamldep, quiet, traverse }
+ocamlfind ocamldep -modules check.ml > check.ml.depends # cached
+# Target: domains/congruences.ml.depends, tags: { extension:ml, file:domains/congruences.ml, ocaml, ocamldep, quiet, traverse }
+ocamlfind ocamldep -modules domains/congruences.ml > domains/congruences.ml.depends
+# Target: nonRelational.mli.depends, tags: { extension:mli, file:nonRelational.mli, ocaml, ocamldep, quiet, traverse }
+ocamlfind ocamldep -modules nonRelational.mli > nonRelational.mli.depends # cached
+# Target: relational.ml.depends, tags: { extension:ml, file:relational.ml, ocaml, ocamldep, quiet, traverse }
+ocamlfind ocamldep -modules relational.ml > relational.ml.depends # cached
+# Target: ast.mli.depends, tags: { extension:mli, file:ast.mli, ocaml, ocamldep, quiet, traverse }
+ocamlfind ocamldep -modules ast.mli > ast.mli.depends # cached
+# Target: location.mli.depends, tags: { extension:mli, file:location.mli, ocaml, ocamldep, quiet, traverse }
+ocamlfind ocamldep -modules location.mli > location.mli.depends # cached
+# Target: location.cmi, tags: { byte, compile, extension:mli, file:location.mli, interf, ocaml, quiet, traverse }
+ocamlfind ocamlc -c -I domains -o location.cmi location.mli # cached
+# Target: name.mli.depends, tags: { extension:mli, file:name.mli, ocaml, ocamldep, quiet, traverse }
+ocamlfind ocamldep -modules name.mli > name.mli.depends # cached
+# Target: name.cmi, tags: { byte, compile, extension:mli, file:name.mli, interf, ocaml, quiet, traverse }
+ocamlfind ocamlc -c -I domains -o name.cmi name.mli # cached
+# Target: ast.cmi, tags: { byte, compile, extension:mli, file:ast.mli, interf, ocaml, quiet, traverse }
+ocamlfind ocamlc -c -I domains -o ast.cmi ast.mli # cached
+# Target: relational.cmo, tags: { byte, compile, extension:cmo, extension:ml, file:relational.cmo, file:relational.ml, implem, ocaml, quiet, traverse }
+ocamlfind ocamlc -c -I domains -o relational.cmo relational.ml # cached
+# Target: nonRelational.cmi, tags: { byte, compile, extension:mli, file:nonRelational.mli, interf, ocaml, quiet, traverse }
+ocamlfind ocamlc -c -I domains -o nonRelational.cmi nonRelational.mli # cached
+# Target: domains/produitCongruencesIntervalles.mli.depends, tags: { extension:mli, file:domains/produitCongruencesIntervalles.mli, ocaml, ocamldep, quiet, traverse }
+ocamlfind ocamldep -modules domains/produitCongruencesIntervalles.mli > domains/produitCongruencesIntervalles.mli.depends # cached
+# Target: domains/congruences.cmo, tags: { byte, compile, extension:cmo, extension:ml, file:domains/congruences.cmo, file:domains/congruences.ml, implem, ocaml, quiet, traverse }
+ocamlfind ocamlc -c -I domains -o domains/congruences.cmo domains/congruences.ml
+# Target: domains/intervals.mli.depends, tags: { extension:mli, file:domains/intervals.mli, ocaml, ocamldep, quiet, traverse }
+ocamlfind ocamldep -modules domains/intervals.mli > domains/intervals.mli.depends # cached
+# Target: domains/infInt.mli.depends, tags: { extension:mli, file:domains/infInt.mli, ocaml, ocamldep, quiet, traverse }
+ocamlfind ocamldep -modules domains/infInt.mli > domains/infInt.mli.depends # cached
+# Target: domains/infInt.cmi, tags: { byte, compile, extension:mli, file:domains/infInt.mli, interf, ocaml, quiet, traverse }
+ocamlfind ocamlc -c -I domains -o domains/infInt.cmi domains/infInt.mli # cached
+# Target: domains/intervals.cmi, tags: { byte, compile, extension:mli, file:domains/intervals.mli, interf, ocaml, quiet, traverse }
+ocamlfind ocamlc -c -I domains -o domains/intervals.cmi domains/intervals.mli # cached
+# Target: domains/nonRelationalReduction.mli.depends, tags: { extension:mli, file:domains/nonRelationalReduction.mli, ocaml, ocamldep, quiet, traverse }
+ocamlfind ocamldep -modules domains/nonRelationalReduction.mli > domains/nonRelationalReduction.mli.depends # cached
+# Target: domains/nonRelationalReduction.cmi, tags: { byte, compile, extension:mli, file:domains/nonRelationalReduction.mli, interf, ocaml, quiet, traverse }
+ocamlfind ocamlc -c -I domains -o domains/nonRelationalReduction.cmi domains/nonRelationalReduction.mli # cached
+# Target: domains/produitCongruencesIntervalles.cmi, tags: { byte, compile, extension:mli, file:domains/produitCongruencesIntervalles.mli, interf, ocaml, quiet, traverse }
+ocamlfind ocamlc -c -I domains -o domains/produitCongruencesIntervalles.cmi domains/produitCongruencesIntervalles.mli
+# Target: check.cmo, tags: { byte, compile, extension:cmo, extension:ml, file:check.cmo, file:check.ml, implem, ocaml, quiet, traverse }
+ocamlfind ocamlc -c -I domains -o check.cmo check.ml
+# Target: nonRelational.ml.depends, tags: { extension:ml, file:nonRelational.ml, ocaml, ocamldep, quiet, traverse }
+ocamlfind ocamldep -modules nonRelational.ml > nonRelational.ml.depends # cached
+# Target: ast.ml.depends, tags: { extension:ml, file:ast.ml, ocaml, ocamldep, quiet, traverse }
+ocamlfind ocamldep -modules ast.ml > ast.ml.depends # cached
+# Target: location.ml.depends, tags: { extension:ml, file:location.ml, ocaml, ocamldep, quiet, traverse }
+ocamlfind ocamldep -modules location.ml > location.ml.depends # cached
+# Target: location.cmx, tags: { compile, extension:cmx, extension:ml, file:location.cmx, file:location.ml, implem, native, ocaml, quiet, traverse }
+ocamlfind ocamlopt -c -I domains -o location.cmx location.ml # cached
+# Target: name.ml.depends, tags: { extension:ml, file:name.ml, ocaml, ocamldep, quiet, traverse }
+ocamlfind ocamldep -modules name.ml > name.ml.depends # cached
+# Target: name.cmx, tags: { compile, extension:cmx, extension:ml, file:name.cmx, file:name.ml, implem, native, ocaml, quiet, traverse }
+ocamlfind ocamlopt -c -I domains -o name.cmx name.ml # cached
+# Target: ast.cmx, tags: { compile, extension:cmx, extension:ml, file:ast.cmx, file:ast.ml, implem, native, ocaml, quiet, traverse }
+ocamlfind ocamlopt -c -I domains -o ast.cmx ast.ml # cached
+# Target: relational.cmx, tags: { compile, extension:cmx, extension:ml, file:relational.cmx, file:relational.ml, implem, native, ocaml, quiet, traverse }
+ocamlfind ocamlopt -c -I domains -o relational.cmx relational.ml # cached
+# Target: report.ml.depends, tags: { extension:ml, file:report.ml, ocaml, ocamldep, quiet, traverse }
+ocamlfind ocamldep -modules report.ml > report.ml.depends # cached
+# Target: report.mli.depends, tags: { extension:mli, file:report.mli, ocaml, ocamldep, quiet, traverse }
+ocamlfind ocamldep -modules report.mli > report.mli.depends # cached
+# Target: report.cmi, tags: { byte, compile, extension:mli, file:report.mli, interf, ocaml, quiet, traverse }
+ocamlfind ocamlc -c -I domains -o report.cmi report.mli # cached
+# Target: report.cmx, tags: { compile, extension:cmx, extension:ml, file:report.cmx, file:report.ml, implem, native, ocaml, quiet, traverse }
+ocamlfind ocamlopt -c -I domains -o report.cmx report.ml # cached
+# Target: nonRelational.cmx, tags: { compile, extension:cmx, extension:ml, file:nonRelational.cmx, file:nonRelational.ml, implem, native, ocaml, quiet, traverse }
+ocamlfind ocamlopt -c -I domains -o nonRelational.cmx nonRelational.ml # cached
+# Target: domains/produitCongruencesIntervalles.ml.depends, tags: { extension:ml, file:domains/produitCongruencesIntervalles.ml, ocaml, ocamldep, quiet, traverse }
+ocamlfind ocamldep -modules domains/produitCongruencesIntervalles.ml > domains/produitCongruencesIntervalles.ml.depends # cached
+# Target: domains/congruences.cmx, tags: { compile, extension:cmx, extension:ml, file:domains/congruences.cmx, file:domains/congruences.ml, implem, native, ocaml, quiet, traverse }
+ocamlfind ocamlopt -c -I domains -o domains/congruences.cmx domains/congruences.ml
+# Target: domains/intervals.ml.depends, tags: { extension:ml, file:domains/intervals.ml, ocaml, ocamldep, quiet, traverse }
+ocamlfind ocamldep -modules domains/intervals.ml > domains/intervals.ml.depends # cached
+# Target: domains/infInt.ml.depends, tags: { extension:ml, file:domains/infInt.ml, ocaml, ocamldep, quiet, traverse }
+ocamlfind ocamldep -modules domains/infInt.ml > domains/infInt.ml.depends # cached
+# Target: domains/infInt.cmx, tags: { compile, extension:cmx, extension:ml, file:domains/infInt.cmx, file:domains/infInt.ml, implem, native, ocaml, quiet, traverse }
+ocamlfind ocamlopt -c -I domains -o domains/infInt.cmx domains/infInt.ml # cached
+# Target: domains/intervals.cmx, tags: { compile, extension:cmx, extension:ml, file:domains/intervals.cmx, file:domains/intervals.ml, implem, native, ocaml, quiet, traverse }
+ocamlfind ocamlopt -c -I domains -o domains/intervals.cmx domains/intervals.ml # cached
+# Target: domains/nonRelationalProduct.ml.depends, tags: { extension:ml, file:domains/nonRelationalProduct.ml, ocaml, ocamldep, quiet, traverse }
+ocamlfind ocamldep -modules domains/nonRelationalProduct.ml > domains/nonRelationalProduct.ml.depends # cached
+# Target: domains/nonRelationalProduct.mli.depends, tags: { extension:mli, file:domains/nonRelationalProduct.mli, ocaml, ocamldep, quiet, traverse }
+ocamlfind ocamldep -modules domains/nonRelationalProduct.mli > domains/nonRelationalProduct.mli.depends # cached
+# Target: domains/nonRelationalProduct.cmi, tags: { byte, compile, extension:mli, file:domains/nonRelationalProduct.mli, interf, ocaml, quiet, traverse }
+ocamlfind ocamlc -c -I domains -o domains/nonRelationalProduct.cmi domains/nonRelationalProduct.mli # cached
+# Target: domains/nonRelationalProduct.cmx, tags: { compile, extension:cmx, extension:ml, file:domains/nonRelationalProduct.cmx, file:domains/nonRelationalProduct.ml, implem, native, ocaml, quiet, traverse }
+ocamlfind ocamlopt -c -I domains -o domains/nonRelationalProduct.cmx domains/nonRelationalProduct.ml # cached
+# Target: domains/nonRelationalReduction.ml.depends, tags: { extension:ml, file:domains/nonRelationalReduction.ml, ocaml, ocamldep, quiet, traverse }
+ocamlfind ocamldep -modules domains/nonRelationalReduction.ml > domains/nonRelationalReduction.ml.depends # cached
+# Target: domains/nonRelationalReduction.cmx, tags: { compile, extension:cmx, extension:ml, file:domains/nonRelationalReduction.cmx, file:domains/nonRelationalReduction.ml, implem, native, ocaml, quiet, traverse }
+ocamlfind ocamlopt -c -I domains -o domains/nonRelationalReduction.cmx domains/nonRelationalReduction.ml # cached
+# Target: domains/produitCongruencesIntervalles.cmx, tags: { compile, extension:cmx, extension:ml, file:domains/produitCongruencesIntervalles.cmx, file:domains/produitCongruencesIntervalles.ml, implem, native, ocaml, quiet, traverse }
+ocamlfind ocamlopt -c -I domains -o domains/produitCongruencesIntervalles.cmx domains/produitCongruencesIntervalles.ml
+# Target: check.cmx, tags: { compile, extension:cmx, extension:ml, file:check.cmx, file:check.ml, implem, native, ocaml, quiet, traverse }
+ocamlfind ocamlopt -c -I domains -o check.cmx check.ml
+# Target: check.native, tags: { dont_link_with, extension:native, file:check.native, link, native, ocaml, program, quiet, traverse }
+ocamlfind ocamlopt -linkpkg -I domains location.cmx name.cmx ast.cmx domains/congruences.cmx domains/infInt.cmx relational.cmx report.cmx nonRelational.cmx domains/intervals.cmx domains/nonRelationalProduct.cmx domains/nonRelationalReduction.cmx domains/produitCongruencesIntervalles.cmx check.cmx -o check.native
+# Compilation successful.
