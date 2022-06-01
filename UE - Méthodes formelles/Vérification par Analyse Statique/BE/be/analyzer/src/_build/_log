@@ -1,0 +1,49 @@
+### Starting build.
+# Target: main.ml.depends, tags: { extension:ml, file:main.ml, ocaml, ocamldep, quiet, traverse }
+ocamlfind ocamldep -modules main.ml > main.ml.depends # cached
+# Target: analyze.mli.depends, tags: { extension:mli, file:analyze.mli, ocaml, ocamldep, quiet, traverse }
+ocamlfind ocamldep -modules analyze.mli > analyze.mli.depends # cached
+# Target: relational.mli.depends, tags: { extension:mli, file:relational.mli, ocaml, ocamldep, quiet, traverse }
+ocamlfind ocamldep -modules relational.mli > relational.mli.depends # cached
+# Target: ast.mli.depends, tags: { extension:mli, file:ast.mli, ocaml, ocamldep, quiet, traverse }
+ocamlfind ocamldep -modules ast.mli > ast.mli.depends # cached
+# Target: location.mli.depends, tags: { extension:mli, file:location.mli, ocaml, ocamldep, quiet, traverse }
+ocamlfind ocamldep -modules location.mli > location.mli.depends # cached
+# Target: location.cmi, tags: { byte, compile, extension:mli, file:location.mli, interf, ocaml, quiet, traverse }
+ocamlfind ocamlc -c -I test -I domains -o location.cmi location.mli # cached
+# Target: name.mli.depends, tags: { extension:mli, file:name.mli, ocaml, ocamldep, quiet, traverse }
+ocamlfind ocamldep -modules name.mli > name.mli.depends # cached
+# Target: name.cmi, tags: { byte, compile, extension:mli, file:name.mli, interf, ocaml, quiet, traverse }
+ocamlfind ocamlc -c -I test -I domains -o name.cmi name.mli # cached
+# Target: ast.cmi, tags: { byte, compile, extension:mli, file:ast.mli, interf, ocaml, quiet, traverse }
+ocamlfind ocamlc -c -I test -I domains -o ast.cmi ast.mli # cached
+# Target: nonRelational.mli.depends, tags: { extension:mli, file:nonRelational.mli, ocaml, ocamldep, quiet, traverse }
+ocamlfind ocamldep -modules nonRelational.mli > nonRelational.mli.depends # cached
+# Target: nonRelational.cmi, tags: { byte, compile, extension:mli, file:nonRelational.mli, interf, ocaml, quiet, traverse }
+ocamlfind ocamlc -c -I test -I domains -o nonRelational.cmi nonRelational.mli # cached
+# Target: relational.cmi, tags: { byte, compile, extension:mli, file:relational.mli, interf, ocaml, quiet, traverse }
+ocamlfind ocamlc -c -I test -I domains -o relational.cmi relational.mli # cached
+# Target: compile.mli.depends, tags: { extension:mli, file:compile.mli, ocaml, ocamldep, quiet, traverse }
+ocamlfind ocamldep -modules compile.mli > compile.mli.depends # cached
+# Target: domains.ml.depends, tags: { extension:ml, file:domains.ml, ocaml, ocamldep, quiet, traverse }
+ocamlfind ocamldep -modules domains.ml > domains.ml.depends # cached
+# Target: domains/BE.ml.depends, tags: { extension:ml, file:domains/BE.ml, ocaml, ocamldep, quiet, traverse }
+ocamlfind ocamldep -modules domains/BE.ml > domains/BE.ml.depends # cached
+# Target: domains/intervals_double.ml.depends, tags: { extension:ml, file:domains/intervals_double.ml, ocaml, ocamldep, quiet, traverse }
+ocamlfind ocamldep -modules domains/intervals_double.ml > domains/intervals_double.ml.depends # cached
+# Target: domains/intervals_double.cmo, tags: { byte, compile, extension:cmo, extension:ml, file:domains/intervals_double.cmo, file:domains/intervals_double.ml, implem, ocaml, quiet, traverse }
+ocamlfind ocamlc -c -I domains -I test -o domains/intervals_double.cmo domains/intervals_double.ml # cached
+# Target: domains/dummy.mli.depends, tags: { extension:mli, file:domains/dummy.mli, ocaml, ocamldep, quiet, traverse }
+ocamlfind ocamldep -modules domains/dummy.mli > domains/dummy.mli.depends # cached
+# Target: domains/intervals3.mli.depends, tags: { extension:mli, file:domains/intervals3.mli, ocaml, ocamldep, quiet, traverse }
+ocamlfind ocamldep -modules domains/intervals3.mli > domains/intervals3.mli.depends # cached
+# Target: domains/BE.cmo, tags: { byte, compile, extension:cmo, extension:ml, file:domains/BE.cmo, file:domains/BE.ml, implem, ocaml, quiet, traverse }
+ocamlfind ocamlc -c -I domains -I test -o domains/BE.cmo domains/BE.ml
++ ocamlfind ocamlc -c -I domains -I test -o domains/BE.cmo domains/BE.ml
+File "domains/BE.ml", line 105, characters 39-40:
+105 |   | t -> meet (false, false, true, Itv(0, None)) t
+                                             ^
+Error: This expression has type int but an expression was expected of type
+         float option
+Command exited with code 2.
+# Compilation unsuccessful.
