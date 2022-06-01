@@ -7,11 +7,11 @@
 |:----:|:----:|:----:|:----:|:----:|:----:|
 |UE - Applications concurrentes et communicantes, bases de données|OpenMP|15%|BE|03/03|<ul><li>- [x] </li></ul>|
 |-|Application Web|35%|Examen|05/12|<ul><li>- [x] </li></ul>|
-|-|Projet - Application Web|15%|Projet (Oral)|06/02|<ul><li>- [ ] </li></ul>|
+|-|Projet - Application Web|15%|Projet (Oral)|06/02|<ul><li>- [x] </li></ul>|
 |-|Bases de Données|20%|Examen|06/03|<ul><li>- [ ] </li></ul>|
 |-|Projet - Données Réparties|15%|Projet|06/03|<ul><li>- [x] </li></ul>|
 |UE - Méthodes Formelles|Systèmes de transitions|50%|Examen|04/15|<ul><li>- [x] </li></ul>|
-|-|Vérification par Analyse statique|50%|BE|06/01|<ul><li>- [ ] </li></ul>|
+|-|Vérification par Analyse statique|50%|BE|06/01|<ul><li>- [x] </li></ul>|
 |UE - Paradigmes émergents de programmation|Programmation Déclarative|50%|Mini-Projets|05/31|<ul><li>- [ ] </li></ul>|
 |-|Programmation Avancée & Calculabilité|50%|Examen|04/22|<ul><li>- [x] </li></ul>|
 |UE - Sémantique et traduction des langages|Sémantique et traduction des langages|40%|Examen|05/20|<ul><li>- [x] </li></ul>|
