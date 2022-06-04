@@ -222,3 +222,106 @@ A queele heure tu viens demain
 
 Tu as eu l'infomation - TaU1l'info
 
+
+
+#### 直陈式现在时
+
+- 第一组动词 (词干 -er) : -e / -es / -e / -ons / -ez / -ent
+- 第二组动词 (词干 -ir) : -ie / -ies / -ie / -issons / -issez / -issent
+- 不规则
+
+
+
+#### 未完成过去时（L'imparfait）
+
+未完成过去时（L'imparfait）是用来描述过去的时态。它用来表示过去正在进行的状态或是未完成的重复动作。 动作或是状态的起始结束时间是未知的。
+
+1. 表示习惯的动作或是某个状态
+2. 用来描写自然状态或是情绪状态，如：时间、气候、年龄、感受
+3. 在一段不明起止的时间内的动作或状态
+4. 用于 si 引导的条件句中
+
+未完成过去时= 直陈式现在时的词干 + 
+
+| je   | tu   | il   | nous  | vous | ils    |
+| ---- | ---- | ---- | ----- | ---- | ------ |
+| -ais | -ais | -ait | -ions | -iez | -aient |
+
+| faire | aller | vouloir | être | avoir | prendre |
+| ----- | ----- | ------- | ---- | ----- | ------- |
+| f-    | all-  | voul-   | et-  | av-   | pren-   |
+
+
+
+#### 条件式现在时（le conditionnel présent）
+
+1. 条件式现在时用在独立句中表示委婉的建议、愿望等。
+2. 条件式现在时用在独立句中表示猜测、想象、不确定的语气等。
+3. 条件式现在时用在以 si 引导的复合句中，表明某个动作实现的可能性不大或与现实情况相反。从句时态用直陈式未完成过去时
+
+条件式现在时 = 简单将来时的词干 + 未完成过去时的词尾-ais, -ais, -ait, -ions,-iez, -aient
+
+
+
+#### 虚拟式
+
+1. 虚拟式的使用带有明显的、强烈的情感色彩和说话者的主观意愿和看法。
+2. 虚拟式主要用于各种从句中（名词性从句、形容词性从句、副词性从句）。是否使用虚拟式一般并不取决于说话者的意愿，而是由主句所使用的动词或动名词结构的短语所决定的。也就是说，这些动词或短语是语法上要求在从句中必须使用虚拟式的。
+3. 虚拟式有时用于独立句，此时主要表示对第三人称的命令、愿望、请求等语气。
+   - 主句谓语表示请求、命令、愿望、爱好、禁止等概念。
+   - 主句谓语表示快乐、悲伤、愤怒、惊讶、失望、害怕、担心、怀疑等情感概念
+   - 主句谓语是关于赞同、反对、好坏、是否应该等表示判断的概念
+   - 主句谓语是表示判断的动词
+   - 主句动词：本身表示陈述和感觉的动词，使用其否定形式时，从句使用虚拟式
+
+第三人称复数直陈式现在时 - “ent” + 
+
+| je   | tu   | il   | nous  | vous | ils  |
+| ---- | ---- | ---- | ----- | ---- | ---- |
+| -e   | -es  | -e   | -ions | -iez | -ent |
+
+avoir : aie / aies / ait / ayons / ayez / aient
+
+aller : aille / ailles / aille / allions / alliez / aillent
+
+faire : fass-		pouvoir : puiss-		savoir : sach-
+
+etre : sois / sois / soit / soyons / soyez / soient
+
+vouloir : veuille / veuilles / veuille / voulions / vouliez / veuillent
+
+
+
+#### 关系代词
+
+1. (ce) qui 在从句中做主语，先行词可以是人或物
+2. (ce) que 在从句中做直接宾语或表语，先行词可以是人或物
+3. où 在句中作地点状语和时间状语，先行词是表示地点和时间的名词
+4. (ce) dont 在从句中可以做间接宾语、状语或补语，用法比较多样，代替de引导的补语。先行词可以是人或物
+5. quoi 只能代物，前面一般会有介词。
+6. lequel，laquelle，lesquels，lesquelles 当先行词指物，关系代词前又有介词时
+
+
+
+#### 人称代词
+
+自反人称代词：me / te / se / nous / vous / se
+
+直接宾语人称代词：me / te / le / la / nous / vous / les
+
+间接宾语人称代词：me / te / lui / nous / vous / leur
+
+重读人称代词：moi / toi / lui / elle / nous / vous / eux / elles
+
+en：代指 数量/和De相配合的无生命补语
+
+Y ：代指 地点/和à 相配合的无生命补语
+
+(ne) $\to$ 自反 $\to$ 直宾 $\to$ 间宾 $\to$ 动词 (pas)
+
+
+
+Veuillez recevoir, Madame, Monsieur, mes salutations distinguées.
+
+au contraire 相反地		s'intéresser à		
+

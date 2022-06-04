@@ -8,15 +8,15 @@
 |UE - Applications concurrentes et communicantes, bases de données|OpenMP|15%|BE|03/03|<ul><li>- [x] </li></ul>|
 |-|Application Web|35%|Examen|05/12|<ul><li>- [x] </li></ul>|
 |-|Projet - Application Web|15%|Projet (Oral)|06/02|<ul><li>- [x] </li></ul>|
-|-|Bases de Données|20%|Examen|06/03|<ul><li>- [ ] </li></ul>|
+|-|Bases de Données|20%|Examen|06/03|<ul><li>- [x] </li></ul>|
 |-|Projet - Données Réparties|15%|Projet|06/03|<ul><li>- [x] </li></ul>|
 |UE - Méthodes Formelles|Systèmes de transitions|50%|Examen|04/15|<ul><li>- [x] </li></ul>|
 |-|Vérification par Analyse statique|50%|BE|06/01|<ul><li>- [x] </li></ul>|
-|UE - Paradigmes émergents de programmation|Programmation Déclarative|50%|Mini-Projets|05/31|<ul><li>- [ ] </li></ul>|
+|UE - Paradigmes émergents de programmation|Programmation Déclarative|50%|Mini-Projets|05/31|<ul><li>- [x] </li></ul>|
 |-|Programmation Avancée & Calculabilité|50%|Examen|04/22|<ul><li>- [x] </li></ul>|
 |UE - Sémantique et traduction des langages|Sémantique et traduction des langages|40%|Examen|05/20|<ul><li>- [x] </li></ul>|
 |-|MiniProjet: MiniC & MiniCaml - Sémantique et traduction des langages|20%|Projet|04/13|<ul><li>- [x] </li></ul>|
-|-|Projet: MiniJava - Sémantique et traduction des langages|40%|Projet|未知|<ul><li>- [ ] </li></ul>|
+|-|Projet: MiniJava - Sémantique et traduction des langages|40%|Projet|未知|<ul><li>- [x] </li></ul>|
 |UE Programmation Mobile et apprentissage profond|Programmation mobile|50%|Examen|03/18|<ul><li>- [x] </li></ul>|
 |-|Apprentissage profond|50%|Projet|05/25|<ul><li>- [x] </li></ul>|
 
