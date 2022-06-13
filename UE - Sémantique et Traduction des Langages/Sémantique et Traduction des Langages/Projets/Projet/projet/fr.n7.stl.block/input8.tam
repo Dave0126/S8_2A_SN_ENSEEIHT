@@ -1,0 +1,23 @@
+LOADL 1
+PUSH 1
+STORE (1) 0[SB]
+LOADL 2
+PUSH 1
+STORE (1) 1[SB]
+LOADL 3
+LOADL 4
+PUSH 2
+STORE (2) 2[SB]
+;fr.n7.stl.block.ast.expression.accessible.VariableAccess@eed1f14
+;(i < 5)
+LOAD (1) 0[SB]
+LOADI (1)
+LOADL 5
+SUBR ILss
+JUMPIF (0) condition_then_1
+condition_else_2
+LOADL 4
+JUMP condition_end_3
+condition_then_1
+LOADL 3
+condition_end_3

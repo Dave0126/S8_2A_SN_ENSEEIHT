@@ -1,0 +1,68 @@
+LOADL 1
+PUSH 1
+STORE (1) 0[SB]
+LOADL 2
+LOADL 3
+LOADL 4
+PUSH 2
+STORE (2) 2[SB]
+;fr.n7.stl.block.ast.expression.accessible.VariableAccess@41629346
+LOAD (2) 2[SB]
+POP (0) 1
+PUSH 1
+STORE (1) 4[SB]
+;fr.n7.stl.block.ast.expression.accessible.VariableAccess@404b9385
+;(i < 5)
+LOAD (1) 0[SB]
+LOADI (1)
+LOADL 5
+SUBR ILss
+condition_6
+JUMPIF (0) condition_then_1
+condition_else_2
+LOADL 0
+LOADL 0
+JUMP condition_end_3
+condition_then_1
+LOADL 5
+PUSH 1
+STORE (1) 5[SB]
+;fr.n7.stl.block.ast.expression.accessible.VariableAccess@682a0b20
+;(i * (sndp))
+LOAD (1) 0[SB]
+LOADI (1)
+;fr.n7.stl.block.ast.expression.accessible.VariableAccess@3d075dc0
+LOAD (2) 2[SB]
+POP (0) 1
+SUBR IMul
+;fr.n7.stl.block.ast.expression.accessible.VariableAccess@214c265e
+;(j + 1)
+LOAD (1) 5[SB]
+LOADI (1)
+LOADL 1
+SUBR IAdd
+condition_end_5
+;fr.n7.stl.block.ast.expression.accessible.VariableAccess@448139f0
+;(k < 10)
+LOAD (1) 4[SB]
+LOADI (1)
+LOADL 10
+SUBR ILss
+condition_6
+JUMPIF (0) condition_then_4
+JUMP condition_end_5
+condition_then_4
+LOADL 3
+PUSH 1
+STORE (1) 8[SB]
+;fr.n7.stl.block.ast.expression.accessible.VariableAccess@7cca494b
+;(k + i)
+LOAD (1) 4[SB]
+LOADI (1)
+;fr.n7.stl.block.ast.expression.accessible.VariableAccess@7ba4f24f
+LOAD (1) 0[SB]
+LOADI (1)
+SUBR IAdd
+condition_end_5
+JUMP condition_6
+condition_end_3

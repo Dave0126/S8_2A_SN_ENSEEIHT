@@ -17,11 +17,12 @@
 |UE - Sémantique et traduction des langages|Sémantique et traduction des langages|40%|Examen|05/20|<ul><li>- [x] </li></ul>|
 |-|MiniProjet: MiniC & MiniCaml - Sémantique et traduction des langages|20%|Mini-Projet (Binômes)|04/13|<ul><li>- [x] </li></ul>|
 |-|Projet: MiniJava - Sémantique et traduction des langages|40%|Projet (Quadrinômes)|06/06|<ul><li>- [x] </li></ul>|
-|UE Programmation Mobile et apprentissage profond|Programmation mobile|50%|Examen|03/18|<ul><li>- [x] </li></ul>|
+|UE - Programmation Mobile et apprentissage profond|Programmation mobile|50%|Examen|03/18|<ul><li>- [x] </li></ul>|
 |-|Apprentissage profond|50%|Projet|05/25|<ul><li>- [x] </li></ul>|
+|UE - SHS|Linguaskill Business English test|-|Examen (Online)|06/09|<ul><li>- [x] </li></ul>|
 
 ### INTRODUCTION
-这个仓库里的内容均为*Département Sciences du Numérique - E.N.S.E.E.I.H.T.* 2021~2022学年-第2学期的教学资料，其中包括所有科目的**Cours**、**TD**、**TP**、**Projet**以及**Examen**的Sujet、Slide、Source Code以及我个人的Rapport和部分笔记。希望能对你有所帮助。
+这个仓库里的内容均为[*Département Sciences du Numérique - E.N.S.E.E.I.H.T.* 2021~2022学年-第2学期](http://formations.enseeiht.fr/fr/offre-de-formations/diplome-d-ingenieur-FC_DI/diplome-D/ingenieur-enseeiht-informatique-et-telecommunications-program-n7i5-171/ingenieur-enseeiht-informatique-et-telecommunications-2eme-annee-subprogram-n7i52-181.html)的教学资料，其中包括所有科目的**Cours**、**TD**、**TP**、**Projet**以及**Examen**的Sujet、Slide、Source Code以及我个人的Rapport和部分笔记。希望能对你有所帮助。
 
 
 ### IMPORTANT: 

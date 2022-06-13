@@ -1,0 +1,12 @@
+test {
+	int i = 1;
+	int j = 2;
+	< int, int> p = < 3, 4>;
+	if ( i < 5 ) {
+		j = 3;
+	} else {
+		j = 4;
+	}
+	
+	
+}

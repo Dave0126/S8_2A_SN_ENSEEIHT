@@ -1,0 +1,15 @@
+test {
+	<int,int> c = {47,53};
+	int a = fst c;
+	int b = snd c;
+	while (10) {
+		if ( a > b ) {
+			int na = a-b;
+			a = na;
+		} else {
+			int nb = b-a;
+			b = nb;
+		}
+	}
+	int res = a;
+}
