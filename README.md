@@ -13,7 +13,8 @@
 |UE - Méthodes Formelles|Systèmes de transitions|50%|Examen|04/15|<ul><li>- [x] </li></ul>|
 |-|Vérification par Analyse statique|50%|BE (Individual)|06/01|<ul><li>- [x] </li></ul>|
 |UE - Paradigmes émergents de programmation|Programmation Déclarative|50%|Mini-Projets (Binômes)|05/31|<ul><li>- [x] </li></ul>|
-|-|Programmation Avancée & Calculabilité|50%|Examen|04/22|<ul><li>- [x] </li></ul>|
+|-|Programmation Avancée|25%|Examen|04/22|<ul><li>- [x] </li></ul>|
+|-|Calculabilité et Complexité|25%|Examen|04/22|<ul><li>- [x] </li></ul>|
 |UE - Sémantique et traduction des langages|Sémantique et traduction des langages|40%|Examen|05/20|<ul><li>- [x] </li></ul>|
 |-|MiniProjet: MiniC & MiniCaml - Sémantique et traduction des langages|20%|Mini-Projet (Binômes)|04/13|<ul><li>- [x] </li></ul>|
 |-|Projet: MiniJava - Sémantique et traduction des langages|40%|Projet (Quadrinômes)|06/06|<ul><li>- [x] </li></ul>|
