@@ -1,6 +1,10 @@
 <div class="logo"><img src="logo.png" width="250px" align="left"></div><br>
 
 # Semester 8-2A-SN-ENSEEIHT
+### 陪审团审核成绩时间
+|类别|内容|日期|是否结束|
+|:----:|:----:|:----:|:----:|
+|Session 1|S7: Session 2; <br> S8: Session 1|2022-06-17|<ul><li>- [x] </li></ul>|
 
 ### 考试占比
 |UE|科目|占比|考核形式|日期|是否结束|
