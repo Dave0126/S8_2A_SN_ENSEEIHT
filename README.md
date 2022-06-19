@@ -1,11 +1,6 @@
 <div class="logo"><img src="logo.png" width="250px" align="left"></div><br>
 
 # Semester 8-2A-SN-ENSEEIHT
-### Schedule of JURY
-|内容|日期|是否结束|
-|:----:|:----:|:----:|
-|S8: Session 1 & S7: Session 2|2022-06-17|<ul><li>- [x] </li></ul>|
-|S8: Session 2|2022-07-12|<ul><li>- [ ] </li></ul>|
 
 ### 考试占比
 |UE|科目|占比|考核形式|日期|是否结束|
@@ -26,6 +21,12 @@
 |UE - Programmation Mobile et apprentissage profond|Programmation mobile|50%|Examen|03/18|<ul><li>- [x] </li></ul>|
 |-|Apprentissage profond|50%|Projet|05/25|<ul><li>- [x] </li></ul>|
 |UE - SHS|Linguaskill Business English test|-|Examen (Online)|06/09|<ul><li>- [x] </li></ul>|
+
+### Schedule of JURY
+|内容|日期|是否结束|
+|:----:|:----:|:----:|
+|S8: Session 1 <br> S7: Session 2|2022-06-17|<ul><li>- [x] </li></ul>|
+|S8: Session 2|2022-07-12|<ul><li>- [ ] </li></ul>|
 
 ### INTRODUCTION
 这个仓库里的内容均为[*Département Sciences du Numérique - E.N.S.E.E.I.H.T.* 2021~2022学年-第2学期](http://formations.enseeiht.fr/fr/offre-de-formations/diplome-d-ingenieur-FC_DI/diplome-D/ingenieur-enseeiht-informatique-et-telecommunications-program-n7i5-171/ingenieur-enseeiht-informatique-et-telecommunications-2eme-annee-subprogram-n7i52-181.html)的教学资料，其中包括所有科目的**Cours**、**TD**、**TP**、**Projet**以及**Examen**的Sujet、Slide、Source Code以及我个人的Rapport和部分笔记。希望能对你有所帮助。
