@@ -36,16 +36,20 @@ Toutes les questions ont le même poids. Les réponses doivent être inscrites �
 ##### 3. Savoir si deux codes calculent la même chose est indécidable. Savoir si deux étudiants ont rendu le même projet est :
 
 - Indécidable.
-- Décidable pour un projet dans un langage de programmation, indécidable pour un langage de spécification de type $TLA^+$.
+- ✅ Décidable pour un projet dans un langage de programmation, indécidable pour un langage de spécification de type $TLA^+$.
 - Décidable dans tous les cas.
 
 
 
 ##### 4. Une machine de Turing universelle peut-elle simuler l'exécution d'une machine non détermiste? Justifier la réponse.
 
+A universal Turing machine is a deterministic Turing machine that does not have the ability to simulate non-deterministic problems. We can introduce a non-deterministic Turing machine, which adds all possibilities to the state, making the running process non-deterministic
+
 
 
 ##### 5. Savoir si une machine de Turing a un nombre pair d'états est-il décidable ? Si oui, donner le principe de l'algorithme; si non, argumenter (montrer une réduction ou une contradiction).
+
+There exists a small universal Turing machine: 2 states, 3 symbols, 6 transitions. and it is decidable
 
 
 
@@ -65,13 +69,15 @@ Toutes les questions ont le même poids. Les réponses doivent être inscrites �
 
 ##### 9. Existe-t-il des fonctions récursives primitives dont on ne peut pas prouver qu'elles terminent, ou est-on toujours sûr qu'elles finiront par donner un résultat ? Justifier la réponse.
 
-
+Primitive recursive functions can be computed with a Turing machine that always stops. They are completely computable functions
 
 
 
 ##### 10. Existe-t-il des fonctions récursives dont on ne peut pas prouver qu'elles terminent, ou est-on toujours sûr qu'elles finiront par donner un résultat ? Justifier la réponse.
 
+Recursion includes primitive recursion and non-primitive recursion.
 
+Primitive recursive functions can be computed with a Turing machine that always stops, whereas non-primitive recursive functions (like *Ackermann function*) require Turing-complete.
 
 
 
@@ -88,21 +94,38 @@ Toutes les questions ont le même poids. Les réponses doivent être inscrites �
 
 ##### 12. Donner l'intuition qui justifie que l'opinion générale pense que $P \subsetneq NP$.
 
+Intuitively, computing a solution to a complex problem is simpler than verifying that a solution is correct.
+If $P=NP$, then all passwords will become meaningless, and all problems with graphs will be solved easily
+
 
 
 ##### 13. Quelles propriétés doit satisfaire la classe des calculs "efficaces" en temps?
+
+Complexity class $P$ problem:
+
+- Closed class by addition, multiplication and composition: solving a problem by aggregating other problems preserves efficiency. The polynomials do not grow too fast.
+- The calculation model is irrelevant: all equivalent up to a polynomial
+- The representation of the data is irrelevant.
 
 
 
 ##### 14. Est-il vrai que, comme SAT est $NP$-complet, tout problème de décision peut être résolu en le réduisant à SAT et en utilisant un solveur SAT?
 
+With NP-complete problems, you at least have some small hope to solve them with a SAT solver, an ILP solver, or with other methods With PSPACE-complete problems, a SAT solver or ILP solver probably won't work (at SAT can only express problems in NP; PSPACE-complete problems cannot be formulated as an instance of SAT), and many other methods for dealing with NP-completeness are less likely to work.
+
 
 
 ##### 15. Comment est définie la complexité en espace d'un algorithme ?
 
+Space complexity is a measure of the size of the storage space temporarily occupied by an algorithm during its operation. The so-called temporary storage space refers to the "space occupied by auxiliary variables" in the code, which includes "formal parameter variables" in the parameter table. The allocated storage space and the storage space allocated for the "local variables" defined in the function body are two parts. We define it by S(n)=O(f(n)), where n is the size (or size) of the problem.
+
 
 
 ##### 16. Quelle est la différence entre l'espace et le temps en tant que ressources à mesurer ?
+
+Time complexity refers to the computational workload required to execute the algorithm, and its complexity reflects the "order of magnitude that increases with the input scale" of the program execution time, and to a large extent can well reflect the advantages and disadvantages of the algorithm.
+
+When writing code, space can be exchanged for time, such as dictionary trees, hashes, etc.
 
 
 
@@ -112,11 +135,18 @@ Toutes les questions ont le même poids. Les réponses doivent être inscrites �
 
 ##### 18. Existe-il des problèmes dans $P$ qui nécessitent un nombre exponentiel de cases?
 
+Complexity class $P$ problem is a problem that can be determined in polynomial time, exponential time complexity does not belong to it.
+
 
 
 ##### 19. Existe-t-il des problèmes $PSPACE$-complets qui ne soient pas aussi $NP$-complets?
 
-
+No. There is a relatively simple inclusion relationship between these classic complexity classes: 
+$$
+1SPACE \; ⊆ \; LSPACE \; ⊆ \; NLSPACE \;⊆\; P \;⊆\; NP \\
+\;⊆\; PSPACE \;⊆\; EXPTIME \;⊆\; EXPSPACE
+$$
+<img src="/Users/dave/Desktop/留学文件/ENSEEIHT/2021-2022/SN2/S8_2A_SN_ENSEEIHT/UE - Paradigmes émergents de la programmation/Calculabilité et complexité/Examen/Calculabilité - complexité//image-20220615163616399.png" alt="image-20220615163616399" style="zoom:50%;" />
 
 ##### 20. Un problème soluble en temps probabiliste polynomial (dans $RP$) peut ne pas avoir de solution déterministe polynomiale (pas dans $P$).
 
