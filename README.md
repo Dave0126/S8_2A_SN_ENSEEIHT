@@ -1,4 +1,6 @@
-<div class="logo"><img src="logo.png" width="250px" align="left"></div><br>
+<div class="logo"><img src="logo.png" width="250px" align="left"></div>
+<br>
+<br>
 
 # Semester 8-2A-SN-ENSEEIHT
 
