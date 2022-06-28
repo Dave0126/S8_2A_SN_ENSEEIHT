@@ -32,7 +32,17 @@ class Moyenne {
 ```
 
 1. Que fait ce programme ? On donnera un exemple de contenu pour le fichier `exemple.txt`.
+
+   > This program converts the second string of each line in the file  `exemple.txt` to a double and returns their average.
+   >
+   > ```
+   > xxx 1 xxx xxx xxx ...
+   > xxx 2 xxx xxx xxx ...
+   > ```
+
 2. Indiquer ses limites et les évolutions qu'il serait souhaitable de lui apporter.
+
+   > This program has high coupling and is not easy to maintain. We can combine Proxy mode and IoC to optimize this program
 
 #### Exercice2: `checkedList`
 
@@ -49,7 +59,11 @@ Le deuxième paramètre est le type attendu pour les éléments de la liste. Les
 Il existe une telle méthode pour chaque structure de données : `checkedSet`, `checkedMap`...
 
 1. Quel est le patron de conception utilisé pour implanter de telles méthodes ? On donnera le diagramme de classe qui correspond à ce patron et on utilisera du pseudo-code pour en expliquer le comportement.
+
+   > 详见 `2020年 - 1.*`
+
 2. L'introspection pourrait être utilisée pour implanter ces différentes méthodes du *framework* des collections. Expliquer comment ceci serait fait en Java.
+
 3. Les implantations de ces méthodes dans le *framework* des collections n'utilisent pas l'introspection. Quelles raisons peut-on avancer ?
 
 #### Exercice 3 
@@ -84,13 +98,66 @@ public aspect CompteObserver (
 ```
 
 1. Quel est le langage utilisé ?
+
+   > This language is `AspectJ` which is based on `Java`
+
 2. Expliquer les éléments qui apparaissent sur ce listing.
+
+   > 详见 `2020年 - 4.1`
+
 3. Dessiner le diagramme de classe de l'application qui s'exécutera.
+
+<img src="image-20220627160733471.png" alt="image-20220627160733471" style="zoom:45%;" />
 
 #### Exercice 4
 
 Les langages Java et Python proposent la notation `@xxx.`
 
 1. Expliquer l'objectif de cette notation.
+
+   > In python, `@xxx` means <u>decorator</u>. A decorator is a function that takes a function (the decorated function) as a parameter and returns a function. It can add other functions to the function without changing the original function.
+
 2. Donner au moins un exemple de cette notation pour chaque langage, Java et Python.
+
+   > Java: `@Override, @Servlet, @Test, ...`
+   >
+   > Python: `@nameOfDecorator`
+
 3. Comparer la mise en œvre de cette notation dans les langages Java et Python.
+
+   >Python:
+   >
+   >```python
+   >def decorator(decoratedFunc):
+   >  def wrapper(*args, **kwargs):
+   >    print('TODO before executing the decoratedFunc')
+   >    decoratedFunc(*args, **kwargs)
+   >    print('TODO after executing the decoratedFunc')
+   >  return wrapper
+   >
+   >@decorator
+   >def func_muilt(*args,**kwargs):
+   >  print('this is func_muilt')
+   >  
+   >func_muilt('python', y1='decorator')
+   >```
+   >
+   >Java: `Annotation` is a kind of metadata used to describe the code, which can be understood as a comment to the machine. It can mainly be used to generate javadoc documents, help code analysis during reflection, and perform basic checks at compile time.
+   >
+   >```java
+   >public class Animal{
+   >  public void eat(){
+   >    System.out.println("Eating...");
+   >  }
+   >}
+   >public class Dog extends Animal{
+   >  @Override
+   >  public void eat(){
+   >    System.out.println("Dogs are eating...");
+   >  }
+   >}
+   >```
+   >
+   >
+   >
+   >

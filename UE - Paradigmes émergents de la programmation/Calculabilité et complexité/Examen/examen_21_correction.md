@@ -16,7 +16,7 @@ Toutes les questions ont le même poids. Les réponses doivent être inscrites �
 
 - $TLA^+$ est plus expressif que C car il contient des théories mathématiques évoluées (théorie des nombres, théorie des ensembles) non présentes dans C.
 - C est un langage de programmation donc plus expressif que $TLA^+$ qui est un langage de spécification.
-- Ils sont équivalents car Turing-complets tous les deux.
+- ✅ Ils sont équivalents car Turing-complets tous les deux.
 - $TLA^+$ est Turing-parfait, mais pas C.
 - On ne sait pas, personne n'a envisagé de comparer les deux.
 
@@ -67,7 +67,7 @@ There exists a small universal Turing machine: 2 states, 3 symbols, 6 transition
 
 
 
-##### 9. Existe-t-il des fonctions récursives primitives dont on ne peut pas prouver qu'elles terminent, ou est-on toujours sûr qu'elles finiront par donner un résultat ? Justifier la réponse.
+##### 9. Existe-t-il des fonctions récursives primitives dont on ne peut pas prouver qu'elles terminent, ou est-on toujours sûr qu'elles finiront par donner un résultat ? Justifier la réponse. (和第10题类似，关于递归函数的停机问题)
 
 Primitive recursive functions can be computed with a Turing machine that always stops. They are completely computable functions
 
@@ -87,7 +87,7 @@ Primitive recursive functions can be computed with a Turing machine that always 
 
 - Oui, c'est pour cela que nous disposons de multiples langages de programmation, chacun étant plus efficace sur certains types de problèmes.
 - Oui sauf si le problème est aussi dans $\mathbf{PSPACE}$.
-- Non, tous les modèles de calcul sont équivalents pour $\mathbf{P}$.
+- ✅ Non, tous les modèles de calcul sont équivalents pour $\mathbf{P}$.
 - Ça dépend si le problème est dans $\mathbf{NP}$ ou pas.
 
 
@@ -101,7 +101,7 @@ If $P=NP$, then all passwords will become meaningless, and all problems with gra
 
 ##### 13. Quelles propriétés doit satisfaire la classe des calculs "efficaces" en temps?
 
-Complexity class $P$ problem:
+We generally believe that when the complexity is polynomial time, we consider it to be an efficient computation. Complexity class $\mathcal{P}$ problem:
 
 - Closed class by addition, multiplication and composition: solving a problem by aggregating other problems preserves efficiency. The polynomials do not grow too fast.
 - The calculation model is irrelevant: all equivalent up to a polynomial
@@ -111,42 +111,64 @@ Complexity class $P$ problem:
 
 ##### 14. Est-il vrai que, comme SAT est $NP$-complet, tout problème de décision peut être résolu en le réduisant à SAT et en utilisant un solveur SAT?
 
-With NP-complete problems, you at least have some small hope to solve them with a SAT solver, an ILP solver, or with other methods With PSPACE-complete problems, a SAT solver or ILP solver probably won't work (at SAT can only express problems in NP; PSPACE-complete problems cannot be formulated as an instance of SAT), and many other methods for dealing with NP-completeness are less likely to work.
+Because the **SAT** problem belongs to the $\mathcal{NP}-compelet$ class, in theory, if a problem $Q$ can be reduced to a **SAT** problem, i.g.
+$$
+Q \le_{p} SAT
+$$
+Then it means that the problem $Q$ can be solved "quickly" by **SAT** solver.
+
+In addition, the problem classes of different complexity have the following relationship，
+$$
+\mathcal{P} \; \subseteq \; \mathcal{NP} \; \subseteq \; \mathsf{EXPTIME} \; \subseteq \; \mathsf{NEXPTIME}
+$$
+However, not all problems belong to the class of  $\mathcal{NP}$ .
 
 
 
 ##### 15. Comment est définie la complexité en espace d'un algorithme ?
 
-Space complexity is a measure of the size of the storage space temporarily occupied by an algorithm during its operation. The so-called temporary storage space refers to the "space occupied by auxiliary variables" in the code, which includes "formal parameter variables" in the parameter table. The allocated storage space and the storage space allocated for the "local variables" defined in the function body are two parts. We define it by S(n)=O(f(n)), where n is the size (or size) of the problem.
+Space complexity is a measure of the size of the storage space temporarily occupied by an algorithm during its operation. The so-called temporary storage space refers to the "space occupied by auxiliary variables" in the code, which includes "formal parameter variables" in the parameter table. The allocated storage space and the storage space allocated for the "local variables" defined in the function body are two parts. We define it by $S(n)=O(f(n))$, where n is the size of the problem.
 
 
 
 ##### 16. Quelle est la différence entre l'espace et le temps en tant que ressources à mesurer ?
 
-Time complexity refers to the computational workload required to execute the algorithm, and its complexity reflects the "order of magnitude that increases with the input scale" of the program execution time, and to a large extent can well reflect the advantages and disadvantages of the algorithm.
+The time complexity shows the "order of magnitude increase with the input size" of the program execution time, and to a large extent can well reflect the advantages and disadvantages of the algorithm.
+
+Space complexity is a measure of the amount of storage space temporarily occupied by an algorithm during its operation.
 
 When writing code, space can be exchanged for time, such as dictionary trees, hashes, etc.
 
 
 
-##### 17. Pourquoi peut-on parler de la classe $LSPACE$ (espace logarithmique) alors que ça n'a pas de sens de parler d'une classe $L$ (temps logarithmique)?
+##### 17. Pourquoi peut-on parler de la classe $\mathsf{LSPACE}$ (espace logarithmique) alors que ça n'a pas de sens de parler d'une classe $\mathsf{L}$ (temps logarithmique)?
+
+Turing machines operating in logarithmic time cannot even read the entire input. This makes them rather uninteresting.
+
+In the Turing machine model, the "logarithmic space" corresponds to the size of a working tape **additionally** to the input tape.
 
 
 
-##### 18. Existe-il des problèmes dans $P$ qui nécessitent un nombre exponentiel de cases?
+##### 18. Existe-il des problèmes dans $\mathcal{P}$ qui nécessitent un nombre exponentiel de cases?
 
 Complexity class $P$ problem is a problem that can be determined in polynomial time, exponential time complexity does not belong to it.
+$$
+\mathcal{P} \subsetneq \mathsf{EXPTIME}
+$$
 
 
 
-##### 19. Existe-t-il des problèmes $PSPACE$-complets qui ne soient pas aussi $NP$-complets?
 
-No. There is a relatively simple inclusion relationship between these classic complexity classes: 
+##### 19. Existe-t-il des problèmes $\mathsf{PSPACE}-\text{complets}$ qui ne soient pas aussi $\mathcal{NP}-\text{complet}$?
+
+There is a relatively simple inclusion relationship between these classic complexity classes: 
 $$
 1SPACE \; ⊆ \; LSPACE \; ⊆ \; NLSPACE \;⊆\; P \;⊆\; NP \\
 \;⊆\; PSPACE \;⊆\; EXPTIME \;⊆\; EXPSPACE
 $$
-<img src="/Users/dave/Desktop/留学文件/ENSEEIHT/2021-2022/SN2/S8_2A_SN_ENSEEIHT/UE - Paradigmes émergents de la programmation/Calculabilité et complexité/Examen/Calculabilité - complexité//image-20220615163616399.png" alt="image-20220615163616399" style="zoom:50%;" />
+ We generally think that $\mathsf{PSPACE} \ne \mathcal{NP}$ , in this case $\mathsf{PSPACE}-\text{complets} \ne \mathcal{NP}-\text{complet}$. Furthermore, $\mathcal{NP} \;⊆\; \mathsf{PSPACE}$. Therefore, we believe that there is a problem as stated in the title.
+
+<img src="hierarchy.png" alt="image-20220615163616399"  />
 
 ##### 20. Un problème soluble en temps probabiliste polynomial (dans $RP$) peut ne pas avoir de solution déterministe polynomiale (pas dans $P$).
 

@@ -41,7 +41,9 @@
    }
    ```
 
+3. `Reflection` is in the running state. For any class, we can know all the properties and methods of this class; for any object, we can call any method of it.
 
+   `Introspection` operates the properties of JavaBean through reflection, and obtains the `getter/setter ` method corresponding to a property. The general practice is to obtain the BeanInfo information of an object through the class Introspector, and then obtain the property descriptor (PropertyDescriptor) through BeanInfo, through which the getter/setter method corresponding to a property can be obtained.
 
 #### Exercice 2
 
@@ -129,6 +131,7 @@ Account(id=1, name=gdai, age=24, order=Order(orderID=000001, price=1000.0))
      - `around`: `before` + `after`
      - `after-throwing`: Throws an exception when an exception occurs in the target method
      - `after`: will eventually be executed
-2. d
+2. 
 1. advantage: Better meet the requirements of "high cohesion, low coupling" in OOP thinking
-   - disadvantage: Need to import AspectJ's compiler/weaver, which is more complex
+   
+   disadvantage: Need to import AspectJ's compiler/weaver, which is more complex
